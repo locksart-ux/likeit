@@ -684,6 +684,7 @@ html,body { width:100%; height:100%; background:#dde0f0; display:flex; align-ite
   </div>
   <div class="ob-chat-area">
     <div class="ob-chat-header">
+      <button onclick="goTo('s030')" style="width:30px;height:30px;border-radius:50%;border:none;background:rgba(255,255,255,0.15);color:white;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0">‹</button>
       <div class="ob-av"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" fill="rgba(255,255,255,0.9)"/><path d="M6 20c0-3.314 2.686-6 6-6s6 2.686 6 6" stroke="rgba(255,255,255,0.9)" stroke-width="2" stroke-linecap="round"/></svg></div>
       <div class="ob-ch-info"><div class="ob-ch-name">LIKEIT AI 비서</div><div class="ob-ch-status"><div class="ob-online"></div><span>목표 설정 중</span></div></div>
       <div class="ob-steps" id="ob-steps"><div class="ob-step on"></div><div class="ob-step"></div><div class="ob-step"></div><div class="ob-step"></div></div>
@@ -709,25 +710,29 @@ html,body { width:100%; height:100%; background:#dde0f0; display:flex; align-ite
         <div class="streak-badge"><span style="font-size:14px">🔥</span><span style="font-family:'Outfit',sans-serif;font-size:13px;font-weight:800;color:#d97706">7</span><span style="font-size:10px;color:#d97706;font-weight:600">일 연속</span></div>
       </div>
     </div>
-    <div class="ai-card" onclick="openMissionScreen({t:'📚 파트5 문법 15문제',sh:8,sm:0,eh:8,em:30,type:'aip',status:'active'})">
+    <div class="ai-card" onclick="goTo('s020')">
       <div class="ai-card-bg"></div>
-      <div class="ai-label"><div class="ai-blink"></div>AI 코치 · 지금 말하는 중</div>
-      <div class="ai-msg">어제 LC 파트 완주했어요! 💪<br>오늘은 <em>파트5 문법 15문제</em>에 집중해봐요.<br>전치사 오답이 반복되고 있어요.</div>
-      <div class="ai-footer"><span class="ai-time">방금 전</span><button class="ai-btn">미션 시작 →</button></div>
+      <div class="ai-label"><div class="ai-blink"></div>AI 코치 · 준비 중</div>
+      <div class="ai-msg">아직 플랜이 없어요 🙌<br>목표를 입력하면 <em>맞춤 플랜</em>을 바로 짜드릴게요!</div>
+      <div class="ai-footer"><span class="ai-time">지금 시작해봐요</span><button class="ai-btn">플랜 만들기 →</button></div>
     </div>
     <div class="prog-section">
-      <div class="sec-row"><span class="sec-title">오늘 달성률</span><span class="sec-sub">3개 중 1개 완료</span></div>
+      <div class="sec-row"><span class="sec-title">오늘 달성률</span><span class="sec-sub">플랜 생성 후 업데이트</span></div>
       <div class="prog-cards">
-        <div class="prog-card hl"><div class="prog-label">미션 달성</div><div class="prog-val">33<span>%</span></div><div class="prog-bar-wrap"><div class="prog-bar-fill pf-indigo" id="pb1" style="width:0%"></div></div></div>
-        <div class="prog-card"><div class="prog-label">주간 달성</div><div class="prog-val">71<span>%</span></div><div class="prog-bar-wrap"><div class="prog-bar-fill pf-green" id="pb2" style="width:0%"></div></div></div>
+        <div class="prog-card hl"><div class="prog-label">미션 달성</div><div class="prog-val">0<span>%</span></div><div class="prog-bar-wrap"><div class="prog-bar-fill pf-indigo" id="pb1" style="width:0%"></div></div></div>
+        <div class="prog-card"><div class="prog-label">주간 달성</div><div class="prog-val">0<span>%</span></div><div class="prog-bar-wrap"><div class="prog-bar-fill pf-green" id="pb2" style="width:0%"></div></div></div>
       </div>
     </div>
     <div class="missions-section">
       <div class="sec-row"><span class="sec-title">오늘 미션</span><span class="sec-sub" style="color:var(--p);font-weight:700;cursor:pointer" onclick="goTo('s040')">전체보기</span></div>
-      <div class="mission-card done" onclick="openMissionScreen({t:'💪 아침 운동 30분',sh:7,sm:0,eh:7,em:30,type:'aip',status:'done'})"><div class="time-col"><div class="tdot done"></div><div class="ttime">07:00</div></div><div class="minfo"><div class="mtitle done">아침 운동 30분</div><div class="msub">완료 · 7:28 AM</div></div><div class="mtag done">완료 ✓</div></div>
-      <div class="mission-card active" onclick="openMissionScreen({t:'📚 파트5 문법 15문제',sh:8,sm:0,eh:8,em:30,type:'aip',status:'active'})"><div class="time-col"><div class="tdot active"></div><div class="ttime">09:00</div></div><div class="minfo"><div class="mtitle">파트5 문법 15문제</div><div class="msub">지금 해야 해요 · 약 25분</div></div><div class="mtag active">⚡ 진행중</div></div>
-      <div class="mission-card pending" onclick="openMissionScreen({t:'🎧 LC 쉐도잉 15분',sh:14,sm:0,eh:14,em:30,type:'aip',status:'pending'})"><div class="time-col"><div class="tdot pending"></div><div class="ttime">14:00</div></div><div class="minfo"><div class="mtitle">LC 쉐도잉 15분</div><div class="msub">오후 2시 · 유튜브 영상 포함</div></div><div class="mtag pending">예정</div></div>
-      <div class="mission-card pending" onclick="openMissionScreen({t:'✏️ 오답 노트 복습',sh:21,sm:0,eh:21,em:30,type:'aip',status:'pending'})"><div class="time-col"><div class="tdot pending"></div><div class="ttime">21:00</div></div><div class="minfo"><div class="mtitle">오답 노트 5문제 복습</div><div class="msub">저녁 9시 · 10분 예상</div></div><div class="mtag pending">예정</div></div>
+      <div id="home-mission-list">
+        <div style="text-align:center;padding:32px 20px;color:var(--g400)">
+          <div style="font-size:32px;margin-bottom:8px">📋</div>
+          <div style="font-size:13px;font-weight:600;color:var(--g500)">아직 미션이 없어요</div>
+          <div style="font-size:11px;margin-top:4px">온보딩에서 목표를 설정하면<br>오늘 미션이 여기 나타나요!</div>
+          <button onclick="goTo('s020')" style="margin-top:14px;padding:9px 22px;background:linear-gradient(135deg,var(--p),var(--p2));border:none;border-radius:12px;color:white;font-size:12px;font-weight:700;cursor:pointer">목표 설정하기 →</button>
+        </div>
+      </div>
     </div>
     <div class="stats-section">
       <div class="sec-row"><span class="sec-title">이번 주 현황</span></div>
@@ -871,7 +876,7 @@ html,body { width:100%; height:100%; background:#dde0f0; display:flex; align-ite
 <!-- ════ 060 RECORD ════ -->
 <div class="screen" id="s060">
   <div style="flex:1;overflow-y:auto;padding-bottom:88px">
-    <div style="padding:14px 24px 0;display:flex;align-items:center;justify-content:space-between">
+    <div style="padding:14px 20px 0;display:flex;align-items:center;justify-content:space-between">
       <span style="font-size:20px;font-weight:900;color:var(--g900)">기록</span>
       <div style="display:flex;gap:2px;background:var(--g100);border-radius:10px;padding:3px">
         <button id="rec-tab-w" onclick="recSetTab('w')" style="padding:4px 10px;border-radius:7px;font-size:11px;font-weight:700;background:white;color:var(--p);border:none;cursor:pointer">주간</button>
@@ -879,45 +884,58 @@ html,body { width:100%; height:100%; background:#dde0f0; display:flex; align-ite
         <button id="rec-tab-a" onclick="recSetTab('a')" style="padding:4px 10px;border-radius:7px;font-size:11px;font-weight:700;color:var(--g400);background:none;border:none;cursor:pointer">전체</button>
       </div>
     </div>
-    <!-- AI 카드 -->
+
+    <!-- AI 패턴 분석 카드 -->
     <div style="margin:14px 20px 0;background:linear-gradient(135deg,var(--p),var(--p2));border-radius:18px;padding:14px 16px">
       <div style="font-size:9px;font-weight:700;color:rgba(255,255,255,0.6);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px;display:flex;align-items:center;gap:4px"><div class="ai-blink"></div>AI 패턴 분석</div>
-      <div style="font-size:13.5px;font-weight:600;color:white;line-height:1.55" id="rec-ai-msg">이번 주 <span style="color:#c4b5fd;font-weight:700">밤 9시 이후 달성률이 92%</span>로 가장 높아요.<br>전치사 오답이 반복되고 있어요. 내일 집중 미션 배치할까요?</div>
+      <div style="font-size:13.5px;font-weight:600;color:white;line-height:1.55" id="rec-ai-msg">플랜을 생성하면 AI가 패턴을 분석해드려요 ✨</div>
     </div>
-    <!-- 지표 -->
+
+    <!-- 핵심 지표 -->
     <div style="padding:14px 20px 0">
       <div class="sec-row"><span class="sec-title" id="rec-kpi-title">이번 주 핵심 지표</span></div>
       <div class="stats-grid">
-        <div class="stat-card" id="rec-stat-1" style="background:var(--p-l);border-color:var(--p-m)"><div class="stat-icon">🎯</div><div class="stat-val" style="color:var(--p)">84<span style="font-size:12px;color:var(--g400)">%</span></div><div class="stat-label">미션 달성률</div><div style="font-size:10px;font-weight:700;color:var(--green);margin-top:3px">↑ +12% 지난주 대비</div></div>
-        <div class="stat-card" id="rec-stat-2"><div class="stat-icon">⏱️</div><div class="stat-val">12<span style="font-size:12px;color:var(--g400)">시간</span></div><div class="stat-label">총 학습 시간</div><div style="font-size:10px;font-weight:700;color:var(--green);margin-top:3px">↑ +2.5시간</div></div>
-        <div class="stat-card" id="rec-stat-3"><div class="stat-icon">🔥</div><div class="stat-val">7<span style="font-size:12px;color:var(--g400)">일</span></div><div class="stat-label">연속 달성 스트릭</div><div style="font-size:10px;font-weight:700;color:var(--amber);margin-top:3px">최고 기록!</div></div>
-        <div class="stat-card" id="rec-stat-4"><div class="stat-icon">📉</div><div class="stat-val">2<span style="font-size:12px;color:var(--g400)">회</span></div><div class="stat-label">미션 실패</div><div style="font-size:10px;font-weight:700;color:var(--green);margin-top:3px">↓ -1회 감소</div></div>
+        <div class="stat-card" style="background:var(--p-l);border-color:var(--p-m)"><div class="stat-icon">🎯</div><div class="stat-val" style="color:var(--p)" id="rec-v1">0<span style="font-size:12px;color:var(--g400)">%</span></div><div class="stat-label">미션 달성률</div></div>
+        <div class="stat-card"><div class="stat-icon">⏱️</div><div class="stat-val" id="rec-v2">0<span style="font-size:12px;color:var(--g400)">h</span></div><div class="stat-label">총 활동 시간</div></div>
+        <div class="stat-card"><div class="stat-icon">🔥</div><div class="stat-val" id="rec-v3">0<span style="font-size:12px;color:var(--g400)">일</span></div><div class="stat-label">연속 달성</div></div>
+        <div class="stat-card" onclick="openMyPlansModal()" style="cursor:pointer;transition:transform 0.1s;active:scale(0.97)"><div class="stat-icon">📋</div><div class="stat-val" id="rec-v4">0<span style="font-size:12px;color:var(--g400)">개</span></div><div class="stat-label" style="color:var(--p);font-weight:700">생성 플랜 →</div></div>
       </div>
     </div>
+
+    <!-- ══ AI 인기 플랜 카테고리 ══ -->
+    <div style="padding:16px 20px 0">
+      <div class="sec-row">
+        <span class="sec-title">📊 AI 인기 플랜</span>
+        <span style="font-size:10px;color:var(--g400)">많이 선택된 순</span>
+      </div>
+
+      <!-- 카테고리 탭 -->
+      <div id="rec-cat-tabs" style="display:flex;gap:6px;overflow-x:auto;padding:8px 0 10px;scrollbar-width:none">
+        <button onclick="recSetCat('전체')"  id="rct-전체"  style="flex-shrink:0;padding:5px 14px;border-radius:20px;border:none;font-size:11px;font-weight:700;cursor:pointer;background:var(--p);color:white;font-family:'Noto Sans KR',sans-serif">전체</button>
+        <button onclick="recSetCat('학습')"  id="rct-학습"  style="flex-shrink:0;padding:5px 14px;border-radius:20px;border:1.5px solid var(--g200);font-size:11px;font-weight:700;cursor:pointer;background:white;color:var(--g500);font-family:'Noto Sans KR',sans-serif">📚 학습</button>
+        <button onclick="recSetCat('코딩')"  id="rct-코딩"  style="flex-shrink:0;padding:5px 14px;border-radius:20px;border:1.5px solid var(--g200);font-size:11px;font-weight:700;cursor:pointer;background:white;color:var(--g500);font-family:'Noto Sans KR',sans-serif">💻 코딩</button>
+        <button onclick="recSetCat('어학')"  id="rct-어학"  style="flex-shrink:0;padding:5px 14px;border-radius:20px;border:1.5px solid var(--g200);font-size:11px;font-weight:700;cursor:pointer;background:white;color:var(--g500);font-family:'Noto Sans KR',sans-serif">🌍 어학</button>
+        <button onclick="recSetCat('여행')"  id="rct-여행"  style="flex-shrink:0;padding:5px 14px;border-radius:20px;border:1.5px solid var(--g200);font-size:11px;font-weight:700;cursor:pointer;background:white;color:var(--g500);font-family:'Noto Sans KR',sans-serif">🗺️ 여행</button>
+        <button onclick="recSetCat('건강')"  id="rct-건강"  style="flex-shrink:0;padding:5px 14px;border-radius:20px;border:1.5px solid var(--g200);font-size:11px;font-weight:700;cursor:pointer;background:white;color:var(--g500);font-family:'Noto Sans KR',sans-serif">💪 건강</button>
+        <button onclick="recSetCat('습관')"  id="rct-습관"  style="flex-shrink:0;padding:5px 14px;border-radius:20px;border:1.5px solid var(--g200);font-size:11px;font-weight:700;cursor:pointer;background:white;color:var(--g500);font-family:'Noto Sans KR',sans-serif">⏰ 습관</button>
+        <button onclick="recSetCat('자격증')" id="rct-자격증" style="flex-shrink:0;padding:5px 14px;border-radius:20px;border:1.5px solid var(--g200);font-size:11px;font-weight:700;cursor:pointer;background:white;color:var(--g500);font-family:'Noto Sans KR',sans-serif">📋 자격증</button>
+        <button onclick="recSetCat('공무원')" id="rct-공무원" style="flex-shrink:0;padding:5px 14px;border-radius:20px;border:1.5px solid var(--g200);font-size:11px;font-weight:700;cursor:pointer;background:white;color:var(--g500);font-family:'Noto Sans KR',sans-serif">🏛️ 공무원</button>
+        <button onclick="recSetCat('예체능')" id="rct-예체능" style="flex-shrink:0;padding:5px 14px;border-radius:20px;border:1.5px solid var(--g200);font-size:11px;font-weight:700;cursor:pointer;background:white;color:var(--g500);font-family:'Noto Sans KR',sans-serif">🎨 예체능</button>
+        <button onclick="recSetCat('독서')"  id="rct-독서"  style="flex-shrink:0;padding:5px 14px;border-radius:20px;border:1.5px solid var(--g200);font-size:11px;font-weight:700;cursor:pointer;background:white;color:var(--g500);font-family:'Noto Sans KR',sans-serif">📗 독서</button>
+      </div>
+
+      <!-- 플랜 리스트 -->
+      <div id="rec-plan-list"></div>
+    </div>
+
     <!-- 그래프 -->
-    <div style="padding:14px 20px 0">
+    <div style="padding:14px 20px 14px">
       <div style="background:var(--g50);border-radius:16px;padding:14px 16px;border:1px solid var(--g100)">
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px"><span style="font-size:12.5px;font-weight:700;color:var(--g700)" id="rec-chart-title">일별 달성률</span><span style="font-size:11px;color:var(--g400)" id="rec-chart-sub">주간 평균 84%</span></div>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+          <span style="font-size:12.5px;font-weight:700;color:var(--g700)" id="rec-chart-title">일별 달성률</span>
+          <span style="font-size:11px;color:var(--g400)" id="rec-chart-sub">플랜 생성 후 업데이트</span>
+        </div>
         <div style="display:flex;align-items:flex-end;gap:6px;height:72px" id="bar-chart"></div>
-      </div>
-    </div>
-    <!-- 약점 분석 -->
-    <div style="padding:14px 20px 0">
-      <div class="sec-row"><span class="sec-title">약점 패턴 분석</span></div>
-      <div style="background:var(--g50);border-radius:14px;padding:12px 14px;border:1px solid var(--g100);margin-bottom:7px;display:flex;align-items:center;gap:10px">
-        <div style="width:36px;height:36px;border-radius:10px;background:var(--rl);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0">⚠️</div>
-        <div style="flex:1"><div style="font-size:12.5px;font-weight:700;color:var(--g900)">전치사 오답 반복</div><div style="font-size:10px;color:var(--g400);margin-top:2px">최근 7일 중 5일 오답 · 정답률 42%</div><div style="height:3px;background:var(--g200);border-radius:2px;margin-top:5px;overflow:hidden"><div style="width:42%;height:100%;background:var(--red);border-radius:2px"></div></div></div>
-        <div style="font-size:9.5px;font-weight:700;padding:3px 8px;border-radius:20px;background:var(--rl);color:var(--red)">취약</div>
-      </div>
-      <div style="background:var(--g50);border-radius:14px;padding:12px 14px;border:1px solid var(--g100);margin-bottom:7px;display:flex;align-items:center;gap:10px">
-        <div style="width:36px;height:36px;border-radius:10px;background:var(--al);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0">📖</div>
-        <div style="flex:1"><div style="font-size:12.5px;font-weight:700;color:var(--g900)">파트7 장문 독해</div><div style="font-size:10px;color:var(--g400);margin-top:2px">속도 느림 · 정답률 67%</div><div style="height:3px;background:var(--g200);border-radius:2px;margin-top:5px;overflow:hidden"><div style="width:67%;height:100%;background:var(--amber);border-radius:2px"></div></div></div>
-        <div style="font-size:9.5px;font-weight:700;padding:3px 8px;border-radius:20px;background:var(--al);color:var(--amber)">보통</div>
-      </div>
-      <div style="background:var(--g50);border-radius:14px;padding:12px 14px;border:1px solid var(--g100);display:flex;align-items:center;gap:10px">
-        <div style="width:36px;height:36px;border-radius:10px;background:var(--gl);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0">🎧</div>
-        <div style="flex:1"><div style="font-size:12.5px;font-weight:700;color:var(--g900)">LC 파트3·4 청취</div><div style="font-size:10px;color:var(--g400);margin-top:2px">꾸준히 향상 중 · 정답률 81%</div><div style="height:3px;background:var(--g200);border-radius:2px;margin-top:5px;overflow:hidden"><div style="width:81%;height:100%;background:var(--green);border-radius:2px"></div></div></div>
-        <div style="font-size:9.5px;font-weight:700;padding:3px 8px;border-radius:20px;background:var(--gl);color:#059669">강점</div>
       </div>
     </div>
   </div>
@@ -1184,10 +1202,10 @@ html,body { width:100%; height:100%; background:#dde0f0; display:flex; align-ite
 // ══════════════════════════════════════
 // CLAUDE API 설정
 // ══════════════════════════════════════
-let LIKEIT_API_KEY = localStorage.getItem('likeit_api_key') || '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';
+let LIKEIT_API_KEY = localStorage.getItem('likeit_api_key') || '';
 let coachHistory = [];
 
-function showApiKeyPrompt(onSuccess) {
+function showApiKeyPrompt(onSuccess, onCancel) {
   const existing = document.getElementById('api-key-overlay');
   if (existing) existing.remove();
   const overlay = document.createElement('div');
@@ -1203,11 +1221,13 @@ function showApiKeyPrompt(onSuccess) {
       <input id="api-key-input" type="password" placeholder="sk-ant-..."
         style="width:100%;padding:12px 14px;border:1.5px solid #e5e7eb;border-radius:12px;font-size:13px;font-family:'Noto Sans KR',sans-serif;outline:none;margin-bottom:10px;box-sizing:border-box"
         onfocus="this.style.borderColor='#4f46e5'" onblur="this.style.borderColor='#e5e7eb'"/>
-      <button onclick="saveApiKey()" style="width:100%;height:48px;background:linear-gradient(135deg,#4f46e5,#a855f7);border:none;border-radius:12px;color:white;font-size:14px;font-weight:700;cursor:pointer;font-family:'Noto Sans KR',sans-serif">저장하고 시작하기 →</button>
+      <button onclick="saveApiKey()" style="width:100%;height:48px;background:linear-gradient(135deg,#4f46e5,#a855f7);border:none;border-radius:12px;color:white;font-size:14px;font-weight:700;cursor:pointer;font-family:'Noto Sans KR',sans-serif;margin-bottom:8px">저장하고 시작하기 →</button>
+      <button onclick="skipApiKey()" style="width:100%;height:40px;background:#f3f4f6;border:none;border-radius:12px;color:#6b7280;font-size:13px;font-weight:600;cursor:pointer;font-family:'Noto Sans KR',sans-serif">키 없이 기본 플랜으로 계속하기</button>
       <div style="text-align:center;margin-top:10px;font-size:10px;color:#9ca3af">키는 이 기기에만 저장돼요</div>
     </div>`;
   document.querySelector('.phone').appendChild(overlay);
   window._apiKeyCallback = onSuccess;
+  window._apiKeyCancelCallback = onCancel;
   setTimeout(() => document.getElementById('api-key-input')?.focus(), 300);
 }
 
@@ -1224,10 +1244,19 @@ function saveApiKey() {
   if (window._apiKeyCallback) window._apiKeyCallback();
 }
 
+function skipApiKey() {
+  document.getElementById('api-key-overlay')?.remove();
+  if (window._apiKeyCancelCallback) window._apiKeyCancelCallback();
+  else if (window._apiKeyCallback) window._apiKeyCallback(); // fallback
+}
+
 async function callClaude(messages, systemPrompt, maxTokens = 800) {
   if (!LIKEIT_API_KEY) {
     return new Promise(resolve => {
-      showApiKeyPrompt(() => callClaude(messages, systemPrompt, maxTokens).then(resolve));
+      showApiKeyPrompt(
+        () => callClaude(messages, systemPrompt, maxTokens).then(resolve), // 키 입력 성공
+        () => resolve(null) // 취소 → null 반환해서 기본 플랜으로
+      );
     });
   }
   try {
@@ -1251,7 +1280,7 @@ async function callClaude(messages, systemPrompt, maxTokens = 800) {
       if (err.error?.type === 'authentication_error') {
         LIKEIT_API_KEY = '';
         localStorage.removeItem('likeit_api_key');
-        showApiKeyPrompt();
+        // 인증 오류도 null 반환 → 기본 플랜으로 자동 진행
         return null;
       }
       throw new Error(err.error?.message || 'API 오류');
@@ -1266,15 +1295,228 @@ async function callClaude(messages, systemPrompt, maxTokens = 800) {
 // ── 화면 전환 ──
 let currentScreen = 's010';
 
+// ════════════════════════════════════════
+// ── 스마트 예시 풀 & 인기도 시스템 ──
+// ════════════════════════════════════════
+const GOAL_POOL = [
+  // ── 중등 ──
+  {label:'영어 단어 하루 20개 📖',        cat:'중등',  key:'mid_eng_word'},
+  {label:'수학 기초 개념 완성 📐',         cat:'중등',  key:'mid_math_basic'},
+  {label:'국어 독해 실력 키우기 📝',       cat:'중등',  key:'mid_kor_read'},
+  {label:'과학 개념 정리 노트 🔬',         cat:'중등',  key:'mid_sci'},
+  {label:'중등 사회·역사 암기 🗺️',        cat:'중등',  key:'mid_social'},
+  // ── 고등 ──
+  {label:'수능 국어 독해 훈련 📚',         cat:'고등',  key:'csat_kor'},
+  {label:'수능 수학 1등급 도전 📊',        cat:'고등',  key:'csat_math'},
+  {label:'수능 영어 1등급 달성 🏆',        cat:'고등',  key:'csat_eng'},
+  {label:'내신 오답 완전정복 ✍️',          cat:'고등',  key:'school_grade'},
+  {label:'모의고사 한 등급 올리기 📈',     cat:'고등',  key:'mock_exam'},
+  {label:'수시 자소서 완성하기 📄',        cat:'고등',  key:'sutime_essay'},
+  {label:'수능 탐구 과목 완성 🧪',         cat:'고등',  key:'csat_science'},
+  // ── 영어 ──
+  {label:'토익 600점 달성 🎯',             cat:'영어',  key:'toeic_600'},
+  {label:'토익 800점 달성 🎯',             cat:'영어',  key:'toeic_800'},
+  {label:'토익 900점 달성 🎯',             cat:'영어',  key:'toeic_900'},
+  {label:'영어회화 기초 마스터 🗣️',        cat:'영어',  key:'eng_speak'},
+  {label:'영어 일기 매일 쓰기 ✏️',         cat:'영어',  key:'eng_diary'},
+  {label:'오픽 IM 이상 달성 🎤',           cat:'영어',  key:'opic_im'},
+  {label:'영어 뉴스 매일 읽기 🗞️',         cat:'영어',  key:'eng_news'},
+  // ── 대학/편입 ──
+  {label:'학점 4.0 이상 만들기 🎓',        cat:'대학',  key:'univ_gpa'},
+  {label:'전공 핵심 과목 A+ 목표 📗',      cat:'대학',  key:'univ_major'},
+  {label:'편입 수학 완성 📐',              cat:'대학',  key:'univ_transfer_math'},
+  {label:'편입 영어 완성 📘',              cat:'대학',  key:'univ_transfer_eng'},
+  {label:'대학원 입시 준비 🔬',            cat:'대학',  key:'univ_grad'},
+  {label:'졸업 논문 완성하기 📋',          cat:'대학',  key:'univ_thesis'},
+  // ── 어학 ──
+  {label:'JLPT N3 합격 🇯🇵',             cat:'어학',  key:'lang_jlpt_n3'},
+  {label:'JLPT N2 합격 🇯🇵',             cat:'어학',  key:'lang_jlpt_n2'},
+  {label:'HSK 4급 합격 🇨🇳',             cat:'어학',  key:'lang_hsk4'},
+  {label:'HSK 5급 합격 🇨🇳',             cat:'어학',  key:'lang_hsk5'},
+  {label:'스페인어 기초 회화 🌍',          cat:'어학',  key:'lang_spanish'},
+  {label:'프랑스어 기초 마스터 🥐',        cat:'어학',  key:'lang_french'},
+  {label:'일본어 회화 입문 🗣️',            cat:'어학',  key:'lang_jp_speak'},
+  // ── 코딩/IT ──
+  {label:'파이썬 기초 완성 🐍',            cat:'코딩',  key:'code_python'},
+  {label:'웹 개발 입문 (HTML·CSS·JS) 💻', cat:'코딩',  key:'code_web'},
+  {label:'앱 개발 시작하기 📱',            cat:'코딩',  key:'code_app'},
+  {label:'알고리즘 문제풀이 🧩',           cat:'코딩',  key:'code_algo'},
+  {label:'SQL 데이터 분석 마스터 🗃️',      cat:'코딩',  key:'code_sql'},
+  {label:'AI·머신러닝 입문 🤖',            cat:'코딩',  key:'code_ai'},
+  // ── 독서 ──
+  {label:'한 달 책 4권 읽기 📚',           cat:'독서',  key:'read_4books'},
+  {label:'독서 노트 매일 쓰기 📓',         cat:'독서',  key:'read_note'},
+  {label:'고전 문학 10권 완독 📖',         cat:'독서',  key:'read_classic'},
+  {label:'자기계발서 월 2권 📘',           cat:'독서',  key:'read_selfdev'},
+  // ── 예체능 ──
+  {label:'미술 실기 준비 🎨',              cat:'예체능', key:'art_practice'},
+  {label:'피아노 한 곡 완주하기 🎹',       cat:'예체능', key:'art_piano'},
+  {label:'기타 코드 마스터하기 🎸',        cat:'예체능', key:'art_guitar'},
+  {label:'영상 편집 기초 배우기 🎬',       cat:'예체능', key:'art_video'},
+  {label:'사진 구도·조명 마스터 📷',       cat:'예체능', key:'art_photo'},
+  // ── 자격증 ──
+  {label:'정보처리기사 취득 💻',           cat:'자격증', key:'cert_info'},
+  {label:'컴퓨터활용능력 1급 🖥️',          cat:'자격증', key:'cert_comp'},
+  {label:'한국사능력검정 1급 🏛️',          cat:'자격증', key:'cert_history'},
+  {label:'운전면허 취득 🚗',               cat:'자격증', key:'cert_drive'},
+  {label:'ITQ 자격증 취득 📋',             cat:'자격증', key:'cert_itq'},
+  {label:'전기기사 취득 ⚡',               cat:'자격증', key:'cert_electric'},
+  {label:'조리기능사 취득 🍳',             cat:'자격증', key:'cert_cook'},
+  {label:'사회복지사 자격증 🤝',           cat:'자격증', key:'cert_welfare'},
+  // ── 공무원 ──
+  {label:'9급 행정직 공무원 합격 📋',      cat:'공무원', key:'gov_admin'},
+  {label:'경찰직 공무원 합격 🚔',          cat:'공무원', key:'gov_police'},
+  {label:'소방직 공무원 합격 🚒',          cat:'공무원', key:'gov_fire'},
+  {label:'교원임용시험 합격 🏫',           cat:'공무원', key:'gov_teacher'},
+  {label:'군무원 합격 🎖️',                cat:'공무원', key:'gov_military'},
+  // ── 건강 ──
+  {label:'아침 운동 습관 만들기 🌅',       cat:'건강',  key:'health_morning'},
+  {label:'체중 -3kg 감량 ⚖️',             cat:'건강',  key:'health_3kg'},
+  {label:'체중 -5kg 감량 ⚖️',             cat:'건강',  key:'health_5kg'},
+  {label:'하루 7,000보 걷기 🚶',           cat:'건강',  key:'health_walk'},
+  {label:'홈트 루틴 만들기 💪',            cat:'건강',  key:'health_homept'},
+  {label:'러닝 5km 완주하기 🏃',           cat:'건강',  key:'health_run5k'},
+  {label:'헬스 3개월 루틴 완성 🏋️',       cat:'건강',  key:'health_gym'},
+  {label:'식단 관리 습관 들이기 🥗',       cat:'건강',  key:'health_diet'},
+  {label:'수면 패턴 개선하기 😴',          cat:'건강',  key:'health_sleep'},
+  // ── 습관 ──
+  {label:'하루 독서 30분 📖',              cat:'습관',  key:'habit_read'},
+  {label:'매일 일기 쓰기 ✍️',              cat:'습관',  key:'habit_diary'},
+  {label:'핸드폰 사용 2시간 이내 📵',      cat:'습관',  key:'habit_phone'},
+  {label:'오전 6시 기상 습관 ⏰',          cat:'습관',  key:'habit_wake'},
+  {label:'하루 물 2L 마시기 💧',           cat:'습관',  key:'habit_water'},
+  {label:'명상 10분 매일 하기 🧘',         cat:'습관',  key:'habit_meditation'},
+  {label:'감사 일기 매일 쓰기 🌟',         cat:'습관',  key:'habit_gratitude'},
+  {label:'주 3회 요리 직접 하기 🍳',       cat:'습관',  key:'habit_cook'},
+  // ── 여행 ──
+  {label:'여수 당일치기 코스 🌊',          cat:'여행',  key:'travel_yeosu'},
+  {label:'제주 3박4일 플랜 🌴',            cat:'여행',  key:'travel_jeju'},
+  {label:'부산 1박2일 코스 🐟',            cat:'여행',  key:'travel_busan'},
+  {label:'경주 당일치기 코스 🏛️',          cat:'여행',  key:'travel_gyeongju'},
+  {label:'강릉 1박2일 바다 여행 🏖️',       cat:'여행',  key:'travel_gangneung'},
+  {label:'서울 근교 당일치기 🚌',          cat:'여행',  key:'travel_seoul_day'},
+  {label:'전주 한옥마을 당일치기 🏘️',      cat:'여행',  key:'travel_jeonju'},
+  {label:'남해 힐링 여행 🌿',              cat:'여행',  key:'travel_namhae'},
+  {label:'속초 1박2일 여행 🏔️',            cat:'여행',  key:'travel_sokcho'},
+  {label:'통영 당일치기 코스 ⛵',          cat:'여행',  key:'travel_tongyeong'},
+];
+
+function getGoalCounts() {
+  try { return JSON.parse(localStorage.getItem('likeit_goal_counts') || '{}'); } catch(e) { return {}; }
+}
+function trackGoalClick(key) {
+  if (!key) return;
+  const c = getGoalCounts(); c[key] = (c[key] || 0) + 1;
+  try { localStorage.setItem('likeit_goal_counts', JSON.stringify(c)); } catch(e) {}
+}
+function findGoalKey(label) {
+  return GOAL_POOL.find(g => g.label === label)?.key || null;
+}
+// 여행 목표 감지
+function isTravel(goal) {
+  const keywords = ['여행','당일치기','코스','플랜','박','일정','여수','제주','부산','경주','강릉','전주','남해','서울 근교'];
+  return keywords.some(k => goal.includes(k));
+}
+
+// 인기 TOP 2 고정 + 랜덤 2개 (총 4개)
+function getSmartChips(count = 4) {
+  const counts = getGoalCounts();
+  const sorted = [...GOAL_POOL].sort((a,b) => (counts[b.key]||0) - (counts[a.key]||0));
+  const top2 = sorted.slice(0, 2);
+  const rest = sorted.slice(2).sort(() => Math.random() - 0.5).slice(0, count - 2);
+  return [...top2, ...rest].map(g => g.label);
+}
+
 // ── 새 목표 모달 ──
 let addInitialized = false;
-const addQ = [
-  {t:"안녕하세요! 어떤 목표를 추가할까요? 🎯", chips:["토익 점수 올리기","운동 습관 만들기","독서 루틴","자격증 취득","다이어트","외국어 공부"]},
-  {t:"좋아요! 언제까지 달성하고 싶으세요?", chips:["1주일","2주일","1개월","3개월","6개월"]},
-  {t:"하루에 얼마나 시간을 쓸 수 있어요?", chips:["30분","1시간","2시간","자유롭게"]},
-];
 let addStep = 0;
 let addAnswers = [];
+let addFlow = []; // 현재 목표에 맞는 동적 플로우
+
+// ════════════════════════════════════════
+// ── 카테고리별 맞춤 질문 플로우 ──
+// ════════════════════════════════════════
+const CATEGORY_FLOWS = {
+  '여행': [
+    { q:'몇 박 며칠로 계획할까요? 🗺️', chips:['당일치기','1박2일','2박3일','3박4일'], key:'period' }
+  ],
+  '건강': [
+    { q:'목표 감량이 얼마나 되나요? ⚖️', chips:['-3kg (건강 추천)','-5kg','-10kg','체중 유지·관리'], key:'target' },
+    { q:'언제까지 달성하고 싶으세요?',    chips:['1개월','2개월','3개월','6개월'], key:'period' },
+    { q:'하루 운동 시간은 얼마나 돼요?',   chips:['30분','1시간','1시간 30분','2시간 이상'], key:'time' }
+  ],
+  '습관': [
+    { q:'언제 하고 싶으세요? ⏰',          chips:['🌅 아침 기상 후','☀️ 점심 시간','🌙 저녁','🌛 자기 전'], key:'when' },
+    { q:'얼마나 유지할 계획인가요?',        chips:['1개월','3개월','6개월','꾸준히'], key:'period' }
+  ],
+  '중등': [
+    { q:'현재 성적 수준은 어느 정도예요?',  chips:['하 (기초부터)','중 (보통)','상 (심화 원함)'], key:'level' },
+    { q:'언제까지 목표를 이루고 싶으세요?', chips:['1개월','3개월','학기말','1년'], key:'period' },
+    { q:'하루 공부 시간은요?',              chips:['30분','1시간','2시간','3시간 이상'], key:'time' }
+  ],
+  '고등': [
+    { q:'현재 등급은요?',                   chips:['6~9등급','4~5등급','2~3등급','1등급 목표'], key:'level' },
+    { q:'목표 시험까지 남은 기간은요?',      chips:['1개월','3개월','6개월 이상','수능'], key:'period' },
+    { q:'하루 공부 시간은요?',              chips:['1시간','2시간','3시간','4시간 이상'], key:'time' }
+  ],
+  '영어': [
+    { q:'현재 수준은 어느 정도예요?',        chips:['초급 (500점 이하)','중급 (600~750)','고급 (800+)'], key:'level' },
+    { q:'시험은 언제 예정인가요?',           chips:['1개월 내','3개월 내','6개월 내','미정'], key:'period' },
+    { q:'하루 학습 시간은요?',              chips:['30분','1시간','2시간','3시간 이상'], key:'time' }
+  ],
+  '자격증': [
+    { q:'시험까지 얼마나 남았나요? 📋',      chips:['1개월 이내','2~3개월','6개월','1년 이상'], key:'period' },
+    { q:'하루 공부 시간은요?',              chips:['1시간','2시간','3시간','4시간 이상'], key:'time' }
+  ],
+  '대학': [
+    { q:'어떤 목표인가요?',               chips:['학점 올리기','편입 준비','대학원 입시','논문·과제'], key:'type' },
+    { q:'목표까지 남은 기간은요?',         chips:['이번 학기','6개월','1년','2년 이상'], key:'period' },
+    { q:'하루 공부 시간은요?',             chips:['1시간','2시간','3시간','4시간 이상'], key:'time' }
+  ],
+  '어학': [
+    { q:'목표 급수·수준을 알려주세요 🌍',   chips:['입문 (처음)','초급','중급','고급'], key:'level' },
+    { q:'시험까지 얼마나 남았나요?',        chips:['1개월','3개월','6개월','미정'], key:'period' },
+    { q:'하루 학습 시간은요?',             chips:['30분','1시간','2시간','3시간 이상'], key:'time' }
+  ],
+  '코딩': [
+    { q:'현재 수준은 어느 정도예요? 💻',    chips:['완전 처음','기초 아는 편','중급','실무 경험 있음'], key:'level' },
+    { q:'목표는 무엇인가요?',              chips:['취업 포트폴리오','사이드 프로젝트','자격증','알고리즘'], key:'goal_type' },
+    { q:'얼마나 준비할 건가요?',           chips:['1개월','3개월','6개월','1년'], key:'period' },
+    { q:'하루 코딩 시간은요?',             chips:['30분','1시간','2시간','3시간 이상'], key:'time' }
+  ],
+  '독서': [
+    { q:'어떤 장르를 읽고 싶으세요? 📗',    chips:['자기계발','소설·문학','경제·경영','과학·철학'], key:'genre' },
+    { q:'목표 기간은요?',                  chips:['1개월','3개월','6개월','꾸준히'], key:'period' },
+    { q:'하루 독서 시간은요?',             chips:['15분','30분','1시간','자유롭게'], key:'time' }
+  ],
+  '예체능': [
+    { q:'어떤 분야인가요? 🎨',             chips:['미술·그림','음악·악기','사진·영상','기타'], key:'type' },
+    { q:'현재 수준은요?',                  chips:['완전 처음','기초 있음','중급'], key:'level' },
+    { q:'목표 기간은요?',                  chips:['1개월','3개월','6개월','1년'], key:'period' },
+    { q:'하루 연습 시간은요?',             chips:['30분','1시간','2시간'], key:'time' }
+  ],
+  '공무원': [
+    { q:'목표 직렬을 알려주세요 🏛️',         chips:['9급 행정직','경찰직','소방직','교원임용'], key:'dept' },
+    { q:'준비 기간은 얼마나 잡고 있어요?',   chips:['6개월','1년','2년 이상'], key:'period' },
+    { q:'하루 공부 시간은요?',              chips:['4시간','6시간','8시간 이상'], key:'time' }
+  ],
+};
+
+// 목표에서 카테고리 찾기
+function getGoalCat(label) {
+  if (isTravel(label)) return '여행';
+  const entry = GOAL_POOL.find(g => g.label === label);
+  return entry?.cat || null;
+}
+
+// 카테고리에 맞는 플로우 반환
+function getFlowForGoal(label) {
+  const cat = getGoalCat(label);
+  return CATEGORY_FLOWS[cat] || [
+    { q:'언제까지 달성하고 싶으세요?', chips:['1개월','3개월','6개월','1년'], key:'period' },
+    { q:'하루에 얼마나 시간을 쓸 수 있어요?', chips:['30분','1시간','2시간','자유롭게'], key:'time' }
+  ];
+}
 
 function openAddModal() {
   const modal = document.getElementById('add-modal');
@@ -1312,7 +1554,11 @@ function addChips(list) {
     const chip = document.createElement('div');
     chip.style.cssText = 'padding:6px 13px;border-radius:20px;background:#eef2ff;border:1.5px solid #e0e7ff;color:#4f46e5;font-size:11.5px;font-weight:600;cursor:pointer';
     chip.textContent = label;
-    chip.onclick = () => { addAnswers.push(label); addMsg(label, 'user'); addChips([]); setTimeout(addNextQ, 600); };
+    chip.onclick = () => {
+      // 첫 번째 질문(목표 선택)이면 인기도 기록
+      if (addStep === 1) trackGoalClick(findGoalKey(label));
+      addAnswers.push(label); addMsg(label, 'user'); addChips([]); setTimeout(addNextQ, 600);
+    };
     c.appendChild(chip);
   });
 }
@@ -1333,25 +1579,56 @@ function addGenPlan(goal, period, time) {
   return {items, timeStr, period};
 }
 
-function addShowPlanConfirm(plan, goal) {
+function addShowPlanConfirm(plan, goal, travelMode) {
   const chat = document.getElementById('add-chat');
   const row = document.createElement('div');
   row.style.cssText = 'display:flex;gap:8px;align-items:flex-start';
-  const planHTML = plan.items.map(p =>
-    `<div style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:white;border-radius:10px;border:1px solid #e0e7ff;margin-bottom:6px">
-      <span style="font-size:16px">${p.icon}</span>
-      <div style="flex:1"><div style="font-size:12px;font-weight:700;color:#1e1b4b">${p.t}</div><div style="font-size:10px;color:#6366f1;margin-top:1px">${p.days} · ${plan.timeStr}</div></div>
-    </div>`
-  ).join('');
+
+  let planHTML = '';
+
+  if (travelMode && plan?.days) {
+    // 여행 플랜 렌더링
+    planHTML = plan.days.map(day => `
+      <div style="font-size:10px;font-weight:800;color:#f97316;padding:4px 0 2px">${day.day}</div>
+      ${(day.events||[]).map(ev => `
+        <div style="display:flex;align-items:center;gap:8px;padding:7px 10px;background:white;border-radius:10px;border:1px solid #fed7aa;margin-bottom:5px">
+          <span style="font-size:11px;font-weight:800;color:#f97316;width:36px;flex-shrink:0">${ev.time}</span>
+          <div style="flex:1">
+            <div style="font-size:12px;font-weight:700;color:#1e1b4b">${ev.task}</div>
+            ${ev.note ? `<div style="font-size:10px;color:#9ca3af;margin-top:1px">${ev.note}</div>` : ''}
+          </div>
+          <span style="font-size:10px;color:#f97316">${ev.duration}분</span>
+        </div>`).join('')}`).join('');
+  } else if (plan?.weeks) {
+    // 일반 플랜 렌더링
+    planHTML = plan.weeks.map(w =>
+      `<div style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:white;border-radius:10px;border:1px solid #e0e7ff;margin-bottom:6px">
+        <span style="font-size:11px;font-weight:800;color:#4f46e5;width:50px;flex-shrink:0">${w.period}</span>
+        <div style="flex:1"><div style="font-size:12px;font-weight:700;color:#1e1b4b">${w.task}</div><div style="font-size:10px;color:#6366f1;margin-top:1px">${w.time}</div></div>
+      </div>`).join('');
+  } else {
+    // API 없을 때 기본 플랜
+    const plan = addGenPlan(goal, addAnswers[1]||'1개월', addAnswers[addAnswers.length-1]||'1시간');
+    planHTML = plan.items.map(p =>
+      `<div style="display:flex;align-items:center;gap:8px;padding:8px 10px;background:white;border-radius:10px;border:1px solid #e0e7ff;margin-bottom:6px">
+        <span style="font-size:16px">${p.icon}</span>
+        <div style="flex:1"><div style="font-size:12px;font-weight:700;color:#1e1b4b">${p.t}</div><div style="font-size:10px;color:#6366f1;margin-top:1px">${p.days} · ${plan.timeStr}</div></div>
+      </div>`).join('');
+  }
+
+  const icon = travelMode ? '🗺️' : '📋';
+  const comment = plan?.comment || (travelMode ? '즐거운 여행 되세요!' : '충분히 달성 가능해요!');
+  window._currentAddPlan = plan;
+  window._currentAddPlanType = travelMode ? 'travel' : 'normal';
+
   row.innerHTML = `
     <div style="width:28px;height:28px;border-radius:9px;background:linear-gradient(135deg,#4f46e5,#a855f7);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:12px;margin-top:2px">✦</div>
     <div style="flex:1">
       <div style="padding:12px 13px;border-radius:15px 15px 15px 3px;background:#f9fafb;border:1px solid #f3f4f6;font-size:13px;color:#111827;line-height:1.6;margin-bottom:8px">
-        ✨ <strong>${goal}</strong> 목표로 <strong>${plan.period}</strong> 플랜을 설계했어요!<br>
-        <span style="font-size:11px;color:#6b7280">아래 플랜을 확인하고 승인해주세요 👇</span>
+        ${comment} 😊<br><span style="font-size:11px;color:#6b7280">아래 플랜을 확인하고 승인해주세요 👇</span>
       </div>
       <div style="background:#eef2ff;border-radius:14px;padding:12px 13px;border:1.5px solid #c7d2fe">
-        <div style="font-size:11px;font-weight:800;color:#4f46e5;margin-bottom:8px;letter-spacing:0.3px">📋 AI 추천 플랜 · ${plan.period}</div>
+        <div style="font-size:11px;font-weight:800;color:#4f46e5;margin-bottom:8px">${icon} AI 맞춤 플랜 · ${goal}</div>
         ${planHTML}
       </div>
       <div style="display:flex;gap:8px;margin-top:10px">
@@ -1363,7 +1640,102 @@ function addShowPlanConfirm(plan, goal) {
   chat.scrollTop = 9999;
 }
 
+// ── 생성된 플랜 저장 ──
+function savePlanToStorage(goalLabel, planData, type) {
+  try {
+    const key = findGoalKey(goalLabel) || goalLabel;
+    const saved = JSON.parse(localStorage.getItem('likeit_saved_plans') || '{}');
+    saved[key] = { goal: goalLabel, plan: planData, type, savedAt: new Date().toISOString() };
+    localStorage.setItem('likeit_saved_plans', JSON.stringify(saved));
+  } catch(e) {}
+}
+
+function loadSavedPlan(goalLabel) {
+  try {
+    const key = findGoalKey(goalLabel) || goalLabel;
+    const saved = JSON.parse(localStorage.getItem('likeit_saved_plans') || '{}');
+    return saved[key] || null;
+  } catch(e) { return null; }
+}
+
+// ── 인기 플랜 카드 클릭 → 플랜 상세 바텀시트 ──
+function openPlanDetail(goalLabel) {
+  const existing = document.getElementById('plan-detail-modal');
+  if (existing) existing.remove();
+
+  const saved = loadSavedPlan(goalLabel);
+  const catMeta = CAT_META[GOAL_POOL.find(g=>g.label===goalLabel)?.cat] || CAT_META['전체'];
+  const travelMode = saved?.type === 'travel';
+
+  let planHTML = '';
+  if (saved?.plan) {
+    if (travelMode && saved.plan.days) {
+      planHTML = saved.plan.days.map(day => `
+        <div style="font-size:10px;font-weight:800;color:#f97316;padding:6px 0 3px">${day.day}</div>
+        ${(day.events||[]).map(ev => `
+          <div style="display:flex;align-items:center;gap:10px;padding:8px 12px;background:var(--g50);border-radius:10px;margin-bottom:5px;border:1px solid var(--g100)">
+            <span style="font-size:11px;font-weight:800;color:#f97316;width:38px;flex-shrink:0">${ev.time}</span>
+            <div style="flex:1"><div style="font-size:12.5px;font-weight:700;color:var(--g900)">${ev.task}</div>${ev.note?`<div style="font-size:10px;color:var(--g400)">${ev.note}</div>`:''}</div>
+            <span style="font-size:10px;color:var(--g400)">${ev.duration}분</span>
+          </div>`).join('')}`).join('');
+    } else if (saved.plan.weeks) {
+      planHTML = saved.plan.weeks.map(w => `
+        <div style="display:flex;align-items:center;gap:10px;padding:8px 12px;background:var(--g50);border-radius:10px;margin-bottom:5px;border:1px solid var(--g100)">
+          <span style="font-size:10px;font-weight:800;color:${catMeta.color};width:46px;flex-shrink:0">${w.period}</span>
+          <div style="flex:1"><div style="font-size:12.5px;font-weight:700;color:var(--g900)">${w.task}</div><div style="font-size:10px;color:var(--g400)">${w.time}</div></div>
+        </div>`).join('');
+    }
+  } else {
+    planHTML = `<div style="text-align:center;padding:20px;color:var(--g400);font-size:12px">저장된 플랜 내용이 없어요.<br>다시 생성하면 저장돼요!</div>`;
+  }
+
+  const savedDate = saved?.savedAt ? new Date(saved.savedAt).toLocaleDateString('ko-KR', {month:'long',day:'numeric'}) : '';
+
+  const modal = document.createElement('div');
+  modal.id = 'plan-detail-modal';
+  modal.style.cssText = 'position:absolute;inset:0;background:rgba(0,0,0,0.5);z-index:200;display:flex;flex-direction:column;justify-content:flex-end';
+
+  const sheet = document.createElement('div');
+  sheet.style.cssText = 'background:white;border-radius:24px 24px 0 0;max-height:82%;overflow-y:auto;transform:translateY(100%);transition:transform 0.3s ease';
+  sheet.innerHTML = `
+    <div style="padding:16px 20px 12px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:white;border-bottom:1px solid var(--g100)">
+      <div>
+        <div style="font-size:16px;font-weight:900;color:var(--g900)">${goalLabel}</div>
+        ${savedDate ? `<div style="font-size:10px;color:var(--g400);margin-top:2px">마지막 생성 ${savedDate}</div>` : ''}
+      </div>
+      <button onclick="document.getElementById('plan-detail-modal').remove()" style="width:32px;height:32px;border-radius:50%;border:none;background:var(--g100);font-size:16px;cursor:pointer">✕</button>
+    </div>
+    <div style="padding:16px 20px">
+      <div style="font-size:11px;font-weight:800;color:${catMeta.color};margin-bottom:10px">${catMeta.icon} 저장된 플랜</div>
+      ${planHTML}
+    </div>
+    <div style="padding:0 20px 32px;display:flex;flex-direction:column;gap:8px">
+      <button onclick="addPlanToCalendar('${goalLabel.replace(/'/g,"\\'")}');document.getElementById('plan-detail-modal').remove()" style="width:100%;height:48px;background:linear-gradient(135deg,#4f46e5,#a855f7);border:none;border-radius:14px;color:white;font-family:'Noto Sans KR',sans-serif;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 4px 16px rgba(79,70,229,0.3)">📅 일정에 추가하기</button>
+      <button onclick="document.getElementById('plan-detail-modal').remove();reuseGoal('${goalLabel.replace(/'/g,"\\'")}');" style="width:100%;height:44px;background:white;border:1.5px solid var(--g200);border-radius:14px;color:var(--g600);font-family:'Noto Sans KR',sans-serif;font-size:13px;font-weight:700;cursor:pointer">🔄 다시 플랜 짜기</button>
+    </div>`;
+
+  modal.appendChild(sheet);
+  document.querySelector('.phone').appendChild(modal);
+  modal.onclick = e => { if (e.target === modal) modal.remove(); };
+  setTimeout(() => { sheet.style.transform = 'translateY(0)'; }, 10);
+}
+
+// 저장된 플랜을 캘린더에 직접 추가
+function addPlanToCalendar(goalLabel) {
+  const saved = loadSavedPlan(goalLabel);
+  if (!saved?.plan) { reuseGoal(goalLabel); return; }
+  if (saved.type === 'travel' && saved.plan.days) {
+    travelDaysToCalEvents(saved.plan.days);
+  } else if (saved.plan.weeks) {
+    planWeeksToCalEvents(saved.plan.weeks, goalLabel);
+  }
+  goTo('s040');
+}
+
 function addConfirmPlan() {
+  // 현재 플랜 저장
+  const goal = addAnswers[0] || '';
+  if (window._currentAddPlan) savePlanToStorage(goal, window._currentAddPlan, window._currentAddPlanType || 'normal');
   addMsg("✅ 승인할게요!", 'user');
   setTimeout(() => {
     addMsg("🎉 완벽해요! 캘린더에 일정을 추가했어요.<br>지금 바로 확인해볼까요?", 'ai');
@@ -1399,19 +1771,144 @@ function addResetPlan() {
 }
 
 function addNextQ() {
-  if (addStep < addQ.length) {
-    const q = addQ[addStep++];
-    setTimeout(() => { addMsg(q.t, 'ai'); setTimeout(() => addChips(q.chips), 300); }, 300);
-  } else {
-    // 플랜 생성 & 컨펌 단계
+  const goal = addAnswers[0] || '';
+
+  // ── Step 0: 목표 선택 ──
+  if (addStep === 0) {
+    addStep++;
     setTimeout(() => {
-      addMsg("잠깐만요, AI가 최적 플랜을 설계하고 있어요... ⚙️", 'ai');
-      setTimeout(() => {
-        const plan = addGenPlan(addAnswers[0], addAnswers[1], addAnswers[2]);
-        addShowPlanConfirm(plan, addAnswers[0]);
-      }, 1200);
+      addMsg('안녕하세요! 어떤 목표를 추가할까요? 🎯', 'ai');
+      setTimeout(() => addChips(getSmartChips(4)), 300);
     }, 300);
+    return;
   }
+
+  // ── 목표 선택 직후 — 플로우 결정 ──
+  if (addStep === 1) {
+    // 목표에 기간 정보 이미 있으면 바로 플랜 생성
+    const dur = goal.match(/(당일치기|1박2일|2박3일|3박4일|(\d+)박(\d+)일)/);
+    if (dur) { addAnswers.push(dur[0]); addFlow = []; setTimeout(() => planGenStart(), 400); return; }
+    addFlow = getFlowForGoal(goal);
+    addStep++;
+    const f = addFlow[0];
+    setTimeout(() => { addMsg(f.q, 'ai'); setTimeout(() => addChips(f.chips), 300); }, 300);
+    return;
+  }
+
+  // ── 동적 플로우 진행 ──
+  const flowIdx = addStep - 2; // addAnswers[0]=목표, [1~n]=플로우답변
+  if (flowIdx < addFlow.length) {
+    addStep++;
+    const f = addFlow[flowIdx];
+    setTimeout(() => { addMsg(f.q, 'ai'); setTimeout(() => addChips(f.chips), 300); }, 300);
+  } else {
+    setTimeout(() => planGenStart(), 300);
+  }
+}
+
+async function planGenStart() {
+  addMsg('잠깐만요, AI가 맞춤 플랜을 설계하고 있어요... ⚙️', 'ai');
+
+  const goalInput   = addAnswers[0] || '';
+  const flowAnswers = addAnswers.slice(1);
+  const cat         = getGoalCat(goalInput) || '기타';
+  const travelMode  = isTravel(goalInput);
+  const ctx         = addFlow.map((f, i) => `${f.key}: ${flowAnswers[i] || ''}`).join(', ');
+  const period      = flowAnswers.find((_, i) => addFlow[i]?.key === 'period') || flowAnswers[0] || '1개월';
+
+  const sysPrompt = travelMode
+    ? `You are LIKEIT AI travel planner. Output ONLY valid JSON.
+Generate a realistic itinerary for "${goalInput}" (${flowAnswers[0]||'당일치기'}).
+Include transit time, meal breaks, rest/cafe every 2~3h. Time: "HH:MM" 24h.
+{"feasible":true,"type":"travel","comment":"여행 기대 한 마디","days":[{"day":"1일차","events":[{"time":"09:00","task":"출발","duration":20,"note":"교통편"},{"time":"12:00","task":"점심 🍽️","duration":60,"note":"지역 음식"},{"time":"18:00","task":"야경 🌆","duration":60,"note":"추천 포인트"}]}]}`
+    : `You are LIKEIT AI mentor. Output ONLY valid JSON.
+Goal: "${goalInput}", Category: ${cat}, Context: ${ctx}
+
+Feasibility check — INFEASIBLE if: weight loss >2kg/week, TOEIC +200pts in 1month, exam in <2weeks, health risk.
+If INFEASIBLE: {"feasible":false,"warning":"한국어 경고 1~2문장","saferGoal":"현실적 대안"}
+
+If FEASIBLE — generate a detailed plan with specific daily missions AND solutions for each phase:
+{
+  "feasible": true,
+  "comment": "격려 한 마디 20자 이내",
+  "weeks": [
+    {
+      "period": "1주차",
+      "task": "${goalInput}에 맞는 구체적인 첫 단계 미션 (예: 특정 단원명, 문제 수 등)",
+      "time": "${flowAnswers[flowAnswers.length-1]||'1시간'}/일",
+      "solution": "이 미션을 효과적으로 수행하는 구체적 방법 1~2문장 (예: 어떤 교재, 어떤 방식)",
+      "dailyMissions": ["오늘 할 구체적 할 일 1", "오늘 할 구체적 할 일 2", "오늘 할 구체적 할 일 3"]
+    },
+    {
+      "period": "2-3주차",
+      "task": "${goalInput} 심화 단계 구체적 미션",
+      "time": "${flowAnswers[flowAnswers.length-1]||'1.5시간'}/일",
+      "solution": "심화 단계 효과적 학습 방법 구체적으로",
+      "dailyMissions": ["심화 할 일 1", "심화 할 일 2", "심화 할 일 3"]
+    },
+    {
+      "period": "${period}",
+      "task": "${goalInput} 마무리 전략",
+      "time": "2시간/일",
+      "solution": "마무리 단계 핵심 전략",
+      "dailyMissions": ["마무리 할 일 1", "마무리 할 일 2", "마무리 할 일 3"]
+    }
+  ]
+}
+Output ONLY JSON. Make tasks VERY specific to "${goalInput}" — include actual subject names, page counts, problem counts.`;
+
+  const aiReply = await callClaude([
+    { role:'user', content:`${goalInput} / ${ctx}. JSON only.` }
+  ], sysPrompt, 800);
+
+  let feasible = true, warning = '', saferGoal = '', parsedPlan = null;
+  if (aiReply) {
+    try {
+      let j = aiReply.replace(/```json|```/g,'').trim();
+      const m = j.match(/\{[\s\S]*\}/); if(m) j=m[0];
+      parsedPlan = JSON.parse(j);
+      if (parsedPlan.feasible === false) { feasible=false; warning=parsedPlan.warning||''; saferGoal=parsedPlan.saferGoal||''; }
+    } catch(e) {}
+  }
+
+  if (!feasible) {
+    addMsg(`⚠️ <strong>잠깐요!</strong><br><br>${warning}<br><br>💡 대신 <strong>"${saferGoal}"</strong>은 어때요?`, 'ai');
+    const btns = document.createElement('div');
+    btns.style.cssText = 'display:flex;flex-direction:column;gap:8px;margin-top:10px';
+    btns.innerHTML = `
+      <button onclick="addAcceptSafer('${saferGoal.replace(/'/g,"\\'")}','${period}','')" style="width:100%;height:42px;background:linear-gradient(135deg,#4f46e5,#a855f7);border:none;border-radius:12px;color:white;font-family:'Noto Sans KR',sans-serif;font-size:13px;font-weight:700;cursor:pointer">✅ 추천 목표로 플랜 받기</button>
+      <button onclick="addForceGoal('${goalInput.replace(/'/g,"\\'")}','${period}','')" style="width:100%;height:38px;background:white;border:1.5px solid #e5e7eb;border-radius:12px;color:#9ca3af;font-family:'Noto Sans KR',sans-serif;font-size:12px;font-weight:600;cursor:pointer">그래도 원래 목표로 할게요</button>`;
+    document.getElementById('add-chat').appendChild(btns);
+    document.getElementById('add-chat').scrollTop = 9999;
+    return;
+  }
+
+  addShowPlanConfirm(parsedPlan, goalInput, travelMode);
+}
+
+// 추천 대안 목표로 플랜 확정
+function addAcceptSafer(saferGoal, period, time) {
+  const chat = document.getElementById('add-chat');
+  if(chat.lastChild) chat.lastChild.remove();
+  addMsg(`"${saferGoal}"으로 바꿀게요! 👍`, 'user');
+  setTimeout(() => {
+    const plan = addGenPlan(saferGoal, period, time);
+    addShowPlanConfirm(plan, saferGoal);
+  }, 600);
+}
+
+// 그래도 원래 목표 강행
+function addForceGoal(goal, period, time) {
+  const chat = document.getElementById('add-chat');
+  if(chat.lastChild) chat.lastChild.remove();
+  addMsg('그래도 원래 목표로 해볼게요 💪', 'user');
+  setTimeout(() => {
+    addMsg('알겠어요! 건강을 최우선으로 챙기면서 진행해요 💙', 'ai');
+    setTimeout(() => {
+      const plan = addGenPlan(goal, period, time);
+      addShowPlanConfirm(plan, goal);
+    }, 600);
+  }, 400);
 }
 
 function addSend() {
@@ -1438,7 +1935,7 @@ function goTo(id) {
     const c = document.getElementById('mc-dyn-content');
     if(!c || c.innerHTML==='') openMissionScreen({t:'📚 파트5 문법 15문제',sh:8,sm:0,eh:8,em:30,type:'aip',status:'active'});
   }
-  if (id === 's060') buildBarChart();
+  if (id === 's060') { buildBarChart(); renderRecPlans(); }
   if (id === 's020' && !obInitialized) obInit();
 }
 
@@ -1498,8 +1995,8 @@ let obStep = 0, obTyping = false, obInitialized = false;
 let obName = '', obGoal = '', obDeadline = '';
 const obFlow = [
   { ai:'안녕하세요! 저는 LIKEIT AI 비서예요 👋\n먼저 이름을 알려주세요!', ph:'이름을 입력하세요', chips:[] },
-  { ai:(n)=>`반가워요, ${n}님! 😊\n어떤 목표를 이루고 싶으세요?`, ph:'예) 토익 900점, 다이어트 10kg', chips:['토익 900점 🎯','공무원 합격 📝','다이어트 -10kg 💪','자격증 취득 📚'] },
-  { ai:(g)=>`${g}! 좋은 목표예요 ⚡\n언제까지 이루고 싶으세요?`, ph:'예) 3개월, 6월 말까지', chips:['1개월','3개월','6개월','1년'] },
+  { ai:(n)=>`반가워요, ${n}님! 😊\n어떤 목표를 이루고 싶으세요?`, ph:'예) 토익 900점, 수능 수학 1등급', chips:[] }, // 동적 주입
+  { ai:(g)=>`${g}!\n언제까지 이루고 싶으세요?`, ph:'예) 3개월, 6월 말까지', chips:['1개월','3개월','6개월','1년'] },
 ];
 
 let obSceneTimer;
@@ -1535,68 +2032,199 @@ function obHideChips(){document.getElementById('ob-chips').style.display='none';
 function obUpdateSteps(n){document.querySelectorAll('.ob-step').forEach((s,i)=>{s.className='ob-step';if(i<n)s.classList.add('done');else if(i===n)s.classList.add('on');});}
 function obD(ms){return new Promise(r=>setTimeout(r,ms));}
 
-async function obSend() {
-  const val=document.getElementById('ob-input').value.trim();
-  if(!val||obTyping)return;
-  obTyping=true; obHideChips(); document.getElementById('ob-input').value='';
-  await obAddBubble(val,'user');
+async function obSend(forcedVal) {
+  const val = forcedVal || document.getElementById('ob-input').value.trim();
+  if(!val) return;
+  if(!forcedVal && obTyping) return;
+  if(!forcedVal) { obTyping=true; obHideChips(); document.getElementById('ob-input').value=''; }
+  if(!forcedVal) await obAddBubble(val,'user');
   if(obStep===0){
     obName=val; obShowTyping(); await obD(1000); obRemoveTyping(); obUpdateSteps(1);
-    const f=obFlow[1]; await obAddBubble(typeof f.ai==='function'?f.ai(obName):f.ai,'ai');
-    document.getElementById('ob-input').placeholder=f.ph; obShowChips(f.chips); obStep=1;
+    const f=obFlow[1];
+    await obAddBubble(typeof f.ai==='function'?f.ai(obName):f.ai,'ai');
+    document.getElementById('ob-input').placeholder=f.ph;
+    obShowChips(getSmartChips(4)); // 스마트 칩 동적 주입
+    obStep=1;
   } else if(obStep===1){
-    obGoal=val; obShowTyping(); await obD(900); obRemoveTyping(); obUpdateSteps(2);
-    const f=obFlow[2]; await obAddBubble(typeof f.ai==='function'?f.ai(obGoal):f.ai,'ai');
-    document.getElementById('ob-input').placeholder=f.ph; obShowChips(f.chips); obStep=2;
+    obGoal=val;
+    trackGoalClick(findGoalKey(val));
+    obShowTyping(); await obD(900); obRemoveTyping(); obUpdateSteps(2);
+
+    // ── 목표에 기간이 이미 포함돼 있으면 바로 플랜 생성 ──
+    const durationInGoal = val.match(/(당일치기|1박2일|2박3일|3박4일|(\d+)박(\d+)일)/);
+    if (durationInGoal) {
+      obDeadline = durationInGoal[0];
+      await obAddBubble(`${obGoal}! 🗺️\nAI가 ${obDeadline} 일정을 바로 짜드릴게요 ✨`, 'ai');
+      await obD(300); obShowTyping();
+      obStep = 2;
+      // 기간 입력 없이 바로 플랜 생성 트리거
+      await obSend(obDeadline);
+      return;
+    }
+
+    // 기간 정보 없으면 질문
+    const deadlineChips = isTravel(obGoal)
+      ? ['당일치기','1박2일','2박3일','3박4일']
+      : ['1개월','3개월','6개월','1년'];
+    const deadlineMsg = isTravel(obGoal)
+      ? `${obGoal}! 🗺️\n몇 박 며칠로 계획할까요?`
+      : `${obGoal}! 좋은 목표예요 ⚡\n언제까지 이루고 싶으세요?`;
+    await obAddBubble(deadlineMsg, 'ai');
+    document.getElementById('ob-input').placeholder = isTravel(obGoal) ? '예) 당일치기, 2박3일' : '예) 3개월, 6월 말까지';
+    obShowChips(deadlineChips); obStep=2;
   } else if(obStep===2){
     obDeadline=val; obShowTyping(); await obD(800); obRemoveTyping(); obUpdateSteps(3);
     await obAddBubble(`${obDeadline} 안에 ${obGoal}!\nAI가 맞춤 플랜을 설계할게요 ✨`,'ai');
     await obD(300); obShowTyping();
 
-    // 진짜 Claude AI 플랜 생성
-    const sysPrompt = `You are LIKEIT app's AI mentor. Respond ONLY with valid JSON, no other text, no markdown, no explanation.
-Required format exactly:
-{"comment":"한줄격려(20자이내)","weeks":[{"period":"1주차","task":"목표에맞는구체적할일","time":"1시간/일"},{"period":"2-3주차","task":"목표에맞는구체적할일","time":"1.5시간/일"},{"period":"${obDeadline}","task":"마무리전략","time":"2시간/일"}]}
-The task content must be specific to the user's goal: ${obGoal}`;
+    // 진짜 Claude AI 플랜 생성 (실현 가능성 검토 포함)
+    const travelMode = isTravel(obGoal);
+    const sysPrompt = travelMode ? `You are LIKEIT AI travel planner. Output ONLY a valid JSON object, nothing else.
+
+Generate a realistic travel itinerary for "${obGoal}" (${obDeadline}).
+Rules:
+- Include transit time between locations (bus/subway minutes)
+- Add meal breaks at natural times (breakfast 08:00, lunch 12:00, dinner 18:00)
+- Include rest/cafe breaks every 2~3 hours
+- If rainy day alternative exists, add "rainAlt" field
+- Time format: "HH:MM" (24h)
+
+Return:
+{
+  "feasible": true,
+  "type": "travel",
+  "comment": "여행 기대되는 한 마디 (20자 이내)",
+  "days": [
+    {
+      "day": "1일차",
+      "events": [
+        {"time":"09:00","task":"출발지 이동","duration":20,"note":"지하철/버스 이용"},
+        {"time":"09:20","task":"첫 번째 명소 도착","duration":90,"note":"추천 포인트"},
+        {"time":"11:00","task":"카페 휴식 ☕","duration":30,"note":"인근 유명 카페"},
+        {"time":"12:00","task":"점심식사 🍽️","duration":60,"note":"지역 대표 음식"},
+        {"time":"18:00","task":"야경 포인트 🌆","duration":60,"note":"일몰 감상"}
+      ]
+    }
+  ]
+}
+Output ONLY the JSON. No explanation, no markdown.` : `You are LIKEIT AI mentor. Output ONLY a valid JSON object, nothing else.
+
+STEP 1 — Feasibility check:
+Evaluate if the goal "${obGoal}" is realistically achievable within "${obDeadline}".
+Examples of INFEASIBLE goals:
+- Weight loss > 2kg per week (e.g. 10kg in 1 week)
+- TOEIC score jump > 200 points in 1 month
+- Passing a major exam (bar, CSAT) in under 2 weeks
+- Any goal that risks physical or mental health
+
+If INFEASIBLE → return:
+{"feasible":false,"warning":"한국어로 왜 위험하거나 불가능한지 1~2문장 설명","saferGoal":"현실적이고 건강한 대안 목표 한 줄"}
+
+If FEASIBLE → return:
+{"feasible":true,"comment":"목표 맞는 격려 한 마디 (20자 이내)","weeks":[
+  {"period":"1주차","task":"${obGoal}에 맞는 구체적 첫 단계 (단원명·문제 수 포함)","time":"1시간/일","solution":"이 단계를 효과적으로 하는 구체적 방법 1~2문장","dailyMissions":["오늘 할 일 1","오늘 할 일 2","오늘 할 일 3"]},
+  {"period":"2-3주차","task":"${obGoal} 심화 단계 구체적 내용","time":"1.5시간/일","solution":"심화 단계 효과적 방법","dailyMissions":["심화 할 일 1","심화 할 일 2","심화 할 일 3"]},
+  {"period":"${obDeadline}","task":"${obGoal} 마무리 전략","time":"2시간/일","solution":"마무리 핵심 전략","dailyMissions":["마무리 할 일 1","마무리 할 일 2","마무리 할 일 3"]}
+]}
+
+Make tasks VERY specific to "${obGoal}" — actual subject names, page counts, problem counts.
+Output ONLY the JSON. No explanation, no markdown.`;
 
     const aiReply = await callClaude([
-      {role:'user', content:`목표:${obGoal} 기간:${obDeadline} 이름:${obName} - JSON만 출력하세요.`}
-    ], sysPrompt, 500);
+      {role:'user', content:`Goal: ${obGoal}, Duration: ${obDeadline}, Name: ${obName}. Check feasibility first, then output JSON only.`}
+    ], sysPrompt, 700);
 
     obRemoveTyping();
 
     let weeks = [
-      {period:'1주', task:'기초 파악 + 현재 수준 진단', time:'1시간/일'},
-      {period:'2-4주', task:'핵심 집중 훈련', time:'1.5시간/일'},
-      {period:obDeadline, task:'모의고사 + 최종 점검', time:'2시간/일'}
+      {period:'1주차', task:`${obGoal} 기초 파악`, time:'1시간/일'},
+      {period:'2-3주차', task:`${obGoal} 집중 훈련`, time:'1.5시간/일'},
+      {period:obDeadline, task:`${obGoal} 마무리`, time:'2시간/일'}
     ];
     let comment = '충분히 달성 가능해요!';
+    let feasibilityPassed = true;
+
     if (aiReply) {
       try {
-        // JSON 추출 시도 (여러 방식)
         let jsonStr = aiReply.replace(/```json|```/g,'').trim();
-        // { } 사이 내용만 추출
         const match = jsonStr.match(/\{[\s\S]*\}/);
         if (match) jsonStr = match[0];
         const parsed = JSON.parse(jsonStr);
-        if (parsed.weeks && parsed.weeks.length > 0) weeks = parsed.weeks;
-        if (parsed.comment) comment = parsed.comment;
+
+        // ── 실현 불가능한 목표 처리 ──
+        if (parsed.feasible === false) {
+          feasibilityPassed = false;
+          await obAddBubble(
+            `⚠️ <strong>잠깐요, ${obName}님!</strong><br><br>${parsed.warning}<br><br>` +
+            `💡 대신 <strong>"${parsed.saferGoal}"</strong>으로 목표를 바꿔볼까요?<br>` +
+            `이 방향이 실제로 더 빠른 변화를 만들어요!`, 'ai'
+          );
+          await obD(300);
+          // 대안 목표로 재시작 버튼
+          const retryBtn = document.createElement('div');
+          retryBtn.style.cssText = 'display:flex;flex-direction:column;gap:8px;padding:4px 0 8px';
+          retryBtn.innerHTML = `
+            <button onclick="obRetryWithSafer('${parsed.saferGoal?.replace(/'/g,"\\'")}')" style="width:100%;height:50px;background:linear-gradient(135deg,#4f46e5,#a855f7);border:none;border-radius:14px;color:white;font-family:'Noto Sans KR',sans-serif;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 6px 20px rgba(79,70,229,0.35)">✅ 추천 목표로 다시 시작하기</button>
+            <button onclick="obForceGoal()" style="width:100%;height:42px;background:white;border:1.5px solid #d1d5db;border-radius:14px;color:#9ca3af;font-family:'Noto Sans KR',sans-serif;font-size:12px;font-weight:600;cursor:pointer">그래도 원래 목표로 할게요</button>
+          `;
+          document.getElementById('ob-chat').appendChild(retryBtn);
+          document.getElementById('ob-chat').scrollTop = 9999;
+          obStep = 99;
+        } else {
+          if (parsed.type === 'travel' && parsed.days) {
+            obGeneratedTravel = parsed.days;
+            obGeneratedWeeks = [];
+          } else {
+            if (parsed.weeks && parsed.weeks.length > 0) weeks = parsed.weeks;
+          }
+          if (parsed.comment) comment = parsed.comment;
+        }
       } catch(e) {
-        console.log('JSON 파싱 실패, 기본값 사용:', e);
+        // 파싱 실패 시 기본 플랜으로 진행
       }
+    } else {
+      // API 없어도 기본 플랜으로 자동 진행
     }
 
-    await obAddBubble(comment, 'ai');
-    await obD(200);
-    const card=document.createElement('div'); card.className='ob-plan-card';
-    card.innerHTML=`<div class="ob-pp-h"><span class="ob-pp-t">⚡ ${obName}님 맞춤 플랜</span><span class="ob-pp-b">✦ AI 설계</span></div>`
-      + weeks.map(w=>`<div class="ob-pp-i"><span class="ob-pp-w">${w.period}</span><span class="ob-pp-tx">${w.task}</span><span class="ob-pp-tm">${w.time}</span></div>`).join('');
-    document.getElementById('ob-chat').appendChild(card);
+    if (!feasibilityPassed) { obTyping = false; return; }
+
+    if (obGeneratedTravel.length > 0) {
+      // ── 여행 플랜 카드 렌더링 ──
+      obGeneratedWeeks = [];
+      await obAddBubble(comment, 'ai');
+      await obD(200);
+      const tCard = document.createElement('div'); tCard.className='ob-plan-card';
+      tCard.innerHTML = `<div class="ob-pp-h"><span class="ob-pp-t">🗺️ ${obGoal} 일정</span><span class="ob-pp-b">✦ AI 설계</span></div>` +
+        obGeneratedTravel.map(day =>
+          `<div style="font-size:10px;font-weight:800;color:#4f46e5;padding:6px 0 2px">${day.day}</div>` +
+          (day.events||[]).map(ev =>
+            `<div class="ob-pp-i">
+              <span class="ob-pp-w" style="color:#f59e0b">${ev.time}</span>
+              <span class="ob-pp-tx">${ev.task}${ev.note?`<br><span style="font-size:9px;color:#9ca3af">${ev.note}</span>`:''}</span>
+              <span class="ob-pp-tm">${ev.duration}분</span>
+            </div>`
+          ).join('')
+        ).join('');
+      document.getElementById('ob-chat').appendChild(tCard);
+    } else {
+      // ── 일반 플랜 카드 렌더링 ──
+      obGeneratedWeeks = weeks;
+      await obAddBubble(comment, 'ai');
+      await obD(200);
+      const card = document.createElement('div'); card.className='ob-plan-card';
+      card.innerHTML = `<div class="ob-pp-h"><span class="ob-pp-t">⚡ ${obName}님 맞춤 플랜</span><span class="ob-pp-b">✦ AI 설계</span></div>`
+        + weeks.map(w=>`<div class="ob-pp-i"><span class="ob-pp-w">${w.period}</span><span class="ob-pp-tx">${w.task}</span><span class="ob-pp-tm">${w.time}</span></div>`).join('');
+      document.getElementById('ob-chat').appendChild(card);
+    }
+
     await obD(400);
     await obAddBubble('이 플랜으로 시작할까요? 🚀','ai');
     const startBtn = document.createElement('div');
-    startBtn.style.cssText='display:flex;justify-content:center;padding:4px 0 8px';
-    startBtn.innerHTML=`<button onclick="obStartNow()" style="width:100%;height:52px;background:linear-gradient(135deg,#4f46e5,#a855f7);border:none;border-radius:14px;color:white;font-family:'Noto Sans KR',sans-serif;font-size:15px;font-weight:700;cursor:pointer;box-shadow:0 6px 20px rgba(79,70,229,0.35);display:flex;align-items:center;justify-content:center;gap:8px">🔥 지금 바로 시작하기 →</button>`;
+    startBtn.style.cssText='display:flex;flex-direction:column;gap:8px;padding:4px 0 8px';
+    startBtn.innerHTML=`
+      <button onclick="obStartNow()" style="width:100%;height:52px;background:linear-gradient(135deg,#4f46e5,#a855f7);border:none;border-radius:14px;color:white;font-family:'Noto Sans KR',sans-serif;font-size:15px;font-weight:700;cursor:pointer;box-shadow:0 6px 20px rgba(79,70,229,0.35);display:flex;align-items:center;justify-content:center;gap:8px">🔥 지금 바로 시작하기 →</button>
+      <button onclick="obRePlan()" style="width:100%;height:44px;background:white;border:1.5px solid #d1d5db;border-radius:14px;color:#6b7280;font-family:'Noto Sans KR',sans-serif;font-size:13px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px">🔄 마음에 안들어요, 다시 짜줘</button>
+    `;
     document.getElementById('ob-chat').appendChild(startBtn);
     document.getElementById('ob-chat').scrollTop=9999;
     obUpdateSteps(4); obStep=99;
@@ -1605,15 +2233,297 @@ The task content must be specific to the user's goal: ${obGoal}`;
   obTyping=false;
 }
 
+// ── 추천 목표로 재시작 ──
+async function obRetryWithSafer(saferGoal) {
+  const chat = document.getElementById('ob-chat');
+  if (chat.lastChild) chat.lastChild.remove();
+  obGoal = saferGoal;
+  await obAddBubble(`"${saferGoal}"으로 바꿀게요! 👍`, 'user');
+  obShowTyping(); await obD(800); obRemoveTyping(); obUpdateSteps(3);
+  await obAddBubble(`좋아요! 그럼 ${obDeadline} 안에 ${saferGoal}!\nAI가 맞춤 플랜을 설계할게요 ✨`, 'ai');
+  await obD(300); obShowTyping();
+  obStep = 2;
+  obTyping = false;
+  await obSend2(saferGoal, obDeadline);
+}
+
+// 그래도 원래 목표로 강행
+async function obForceGoal() {
+  const chat = document.getElementById('ob-chat');
+  if (chat.lastChild) chat.lastChild.remove();
+  await obAddBubble('그래도 해볼게요! 💪', 'user');
+  obShowTyping(); await obD(600); obRemoveTyping();
+  await obAddBubble(
+    `알겠어요 💪 ${obName}님의 의지를 존중해요!\n다만 건강을 최우선으로 챙기면서 진행해요.\n몸에 무리가 오면 언제든 조정해드릴게요.`, 'ai'
+  );
+  await obD(300); obShowTyping();
+
+  // 경고 없이 기본 플랜 강행 생성
+  const sysPrompt = `You are LIKEIT AI mentor. Output ONLY a valid JSON object.
+{"comment":"의지 응원 격려 한 마디","weeks":[{"period":"1주차","task":"${obGoal}에 맞는 구체적 할 일","time":"1시간/일"},{"period":"2-3주차","task":"${obGoal}에 맞는 구체적 할 일","time":"1.5시간/일"},{"period":"${obDeadline}","task":"${obGoal} 마무리 전략","time":"2시간/일"}]}`;
+  const aiReply = await callClaude([
+    {role:'user', content:`Goal: ${obGoal}, Duration: ${obDeadline}. Output JSON only.`}
+  ], sysPrompt, 600);
+  obRemoveTyping();
+
+  let weeks = [{period:'1주차',task:`${obGoal} 기초`,time:'1시간/일'},{period:'2-3주차',task:`${obGoal} 집중`,time:'1.5시간/일'},{period:obDeadline,task:'마무리',time:'2시간/일'}];
+  let comment = '포기하지 말아요!';
+  if (aiReply) {
+    try {
+      let j = aiReply.replace(/```json|```/g,'').trim();
+      const m = j.match(/\{[\s\S]*\}/); if(m) j=m[0];
+      const p = JSON.parse(j);
+      if(p.weeks) weeks=p.weeks; if(p.comment) comment=p.comment;
+    } catch(e){}
+  }
+  await obAddBubble(comment,'ai');
+  await obD(200);
+  const card=document.createElement('div'); card.className='ob-plan-card';
+  card.innerHTML=`<div class="ob-pp-h"><span class="ob-pp-t">⚡ ${obName}님 맞춤 플랜</span><span class="ob-pp-b">✦ AI 설계</span></div>`
+    +weeks.map(w=>`<div class="ob-pp-i"><span class="ob-pp-w">${w.period}</span><span class="ob-pp-tx">${w.task}</span><span class="ob-pp-tm">${w.time}</span></div>`).join('');
+  document.getElementById('ob-chat').appendChild(card);
+  await obD(400);
+  await obAddBubble('이 플랜으로 시작할까요? 🚀','ai');
+  const btn=document.createElement('div');
+  btn.style.cssText='display:flex;flex-direction:column;gap:8px;padding:4px 0 8px';
+  btn.innerHTML=`<button onclick="obStartNow()" style="width:100%;height:52px;background:linear-gradient(135deg,#4f46e5,#a855f7);border:none;border-radius:14px;color:white;font-family:'Noto Sans KR',sans-serif;font-size:15px;font-weight:700;cursor:pointer;box-shadow:0 6px 20px rgba(79,70,229,0.35);display:flex;align-items:center;justify-content:center;gap:8px">🔥 지금 바로 시작하기 →</button>`;
+  document.getElementById('ob-chat').appendChild(btn);
+  document.getElementById('ob-chat').scrollTop=9999;
+  obStep=99; obTyping=false;
+}
+
+// 목표·기간을 직접 받아 플랜만 생성하는 내부 헬퍼
+async function obSend2(goal, deadline) {
+  obShowTyping(); await obD(800); obRemoveTyping();
+
+  const sysPrompt = `You are LIKEIT AI mentor. Output ONLY valid JSON.
+{"feasible":true,"comment":"격려 한 마디","weeks":[{"period":"1주차","task":"${goal}에 맞는 구체적 할 일","time":"1시간/일"},{"period":"2-3주차","task":"${goal}에 맞는 구체적 할 일","time":"1.5시간/일"},{"period":"${deadline}","task":"${goal} 마무리 전략","time":"2시간/일"}]}`;
+  const aiReply = await callClaude([
+    {role:'user', content:`Goal: ${goal}, Duration: ${deadline}. Output JSON only.`}
+  ], sysPrompt, 600);
+
+  let weeks=[{period:'1주차',task:`${goal} 기초`,time:'1시간/일'},{period:'2-3주차',task:`${goal} 집중`,time:'1.5시간/일'},{period:deadline,task:'마무리',time:'2시간/일'}];
+  let comment='충분히 달성 가능해요!';
+  if(aiReply){try{let j=aiReply.replace(/```json|```/g,'').trim();const m=j.match(/\{[\s\S]*\}/);if(m)j=m[0];const p=JSON.parse(j);if(p.weeks)weeks=p.weeks;if(p.comment)comment=p.comment;}catch(e){}}
+
+  await obAddBubble(comment,'ai');
+  await obD(200);
+  const card=document.createElement('div'); card.className='ob-plan-card';
+  card.innerHTML=`<div class="ob-pp-h"><span class="ob-pp-t">⚡ ${obName}님 맞춤 플랜</span><span class="ob-pp-b">✦ AI 설계</span></div>`
+    +weeks.map(w=>`<div class="ob-pp-i"><span class="ob-pp-w">${w.period}</span><span class="ob-pp-tx">${w.task}</span><span class="ob-pp-tm">${w.time}</span></div>`).join('');
+  document.getElementById('ob-chat').appendChild(card);
+  await obD(400);
+  await obAddBubble('이 플랜으로 시작할까요? 🚀','ai');
+  const startBtn=document.createElement('div');
+  startBtn.style.cssText='display:flex;flex-direction:column;gap:8px;padding:4px 0 8px';
+  startBtn.innerHTML=`
+    <button onclick="obStartNow()" style="width:100%;height:52px;background:linear-gradient(135deg,#4f46e5,#a855f7);border:none;border-radius:14px;color:white;font-family:'Noto Sans KR',sans-serif;font-size:15px;font-weight:700;cursor:pointer;box-shadow:0 6px 20px rgba(79,70,229,0.35);display:flex;align-items:center;justify-content:center;gap:8px">🔥 지금 바로 시작하기 →</button>
+    <button onclick="obRePlan()" style="width:100%;height:44px;background:white;border:1.5px solid #d1d5db;border-radius:14px;color:#6b7280;font-family:'Noto Sans KR',sans-serif;font-size:13px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px">🔄 마음에 안들어요, 다시 짜줘</button>
+  `;
+  document.getElementById('ob-chat').appendChild(startBtn);
+  document.getElementById('ob-chat').scrollTop=9999;
+  obUpdateSteps(4); obStep=99; obTyping=false;
+}
+
+async function obRePlan() {
+  // 마지막 버튼 제거
+  const chat = document.getElementById('ob-chat');
+  if(chat.lastChild) chat.lastChild.remove();
+
+  await obAddBubble('다시 짜줘! 🔄', 'user');
+  obShowTyping(); await obD(800); obRemoveTyping();
+  await obAddBubble('알겠어요! 다른 방식으로 다시 설계할게요 ✨', 'ai');
+  await obD(300); obShowTyping();
+
+  const sysPrompt = `You are LIKEIT app's AI mentor. The user didn't like the previous plan. Create a DIFFERENT approach.
+Respond ONLY with valid JSON, no other text:
+{"comment":"한줄격려(20자이내)","weeks":[{"period":"1주차","task":"이전과다른구체적할일","time":"시간/일"},{"period":"2-3주차","task":"다른접근법","time":"시간/일"},{"period":"${obDeadline}","task":"마무리전략","time":"시간/일"}]}
+Goal: ${obGoal} - Make it DIFFERENT from the first plan, more specific and creative.`;
+
+  const aiReply = await callClaude([
+    {role:'user', content:`목표:${obGoal} 기간:${obDeadline} - 이전과 다른 새로운 플랜을 JSON으로만 출력하세요.`}
+  ], sysPrompt, 500);
+
+  obRemoveTyping();
+
+  let weeks = [
+    {period:'1주차', task:'새로운 방식으로 기초 다지기', time:'1시간/일'},
+    {period:'2-3주차', task:'집중 훈련 + 실전 적용', time:'1.5시간/일'},
+    {period:obDeadline, task:'최종 점검 + 마무리', time:'2시간/일'}
+  ];
+  let comment = '이 방법이 더 잘 맞을 거예요!';
+  if (aiReply) {
+    try {
+      let jsonStr = aiReply.replace(/```json|```/g,'').trim();
+      const match = jsonStr.match(/\{[\s\S]*\}/);
+      if (match) jsonStr = match[0];
+      const parsed = JSON.parse(jsonStr);
+      if (parsed.weeks && parsed.weeks.length > 0) weeks = parsed.weeks;
+      if (parsed.comment) comment = parsed.comment;
+    } catch(e) {}
+  }
+
+  await obAddBubble(comment, 'ai');
+  await obD(200);
+  const card = document.createElement('div'); card.className='ob-plan-card';
+  card.innerHTML=`<div class="ob-pp-h"><span class="ob-pp-t">⚡ ${obName}님 새 플랜</span><span class="ob-pp-b">✦ AI 재설계</span></div>`
+    + weeks.map(w=>`<div class="ob-pp-i"><span class="ob-pp-w">${w.period}</span><span class="ob-pp-tx">${w.task}</span><span class="ob-pp-tm">${w.time}</span></div>`).join('');
+  chat.appendChild(card);
+  await obD(400);
+  await obAddBubble('이 플랜은 어때요? 🚀', 'ai');
+
+  const newBtn = document.createElement('div');
+  newBtn.style.cssText='display:flex;flex-direction:column;gap:8px;padding:4px 0 8px';
+  newBtn.innerHTML=`
+    <button onclick="obStartNow()" style="width:100%;height:52px;background:linear-gradient(135deg,#4f46e5,#a855f7);border:none;border-radius:14px;color:white;font-family:'Noto Sans KR',sans-serif;font-size:15px;font-weight:700;cursor:pointer;box-shadow:0 6px 20px rgba(79,70,229,0.35);display:flex;align-items:center;justify-content:center;gap:8px">🔥 이걸로 시작하기 →</button>
+    <button onclick="obRePlan()" style="width:100%;height:44px;background:white;border:1.5px solid #d1d5db;border-radius:14px;color:#6b7280;font-family:'Noto Sans KR',sans-serif;font-size:13px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px">🔄 그래도 마음에 안들어요</button>
+  `;
+  chat.appendChild(newBtn);
+  chat.scrollTop=9999;
+}
+
+// ── AI 플랜 → 캘린더 이벤트 변환 ──
+let obGeneratedWeeks = [];
+let obGeneratedTravel = [];
+
+// 여행 days → allCalEvents push (시간대별 이벤트)
+function travelDaysToCalEvents(days) {
+  const today = new Date();
+  days.forEach((day, dayIdx) => {
+    const date = new Date(today);
+    date.setDate(today.getDate() + dayIdx);
+    (day.events || []).forEach(ev => {
+      const [h, m] = ev.time.split(':').map(Number);
+      const durMin = ev.duration || 60;
+      const eh = h + Math.floor((m + durMin) / 60);
+      const em = (m + durMin) % 60;
+      allCalEvents.push({
+        t: `🗺️ ${ev.task}`,
+        sh: h, sm: m, eh, em,
+        type: 'aip',
+        status: dayIdx === 0 && h <= new Date().getHours() ? 'done' : 'pending',
+        date: date.toDateString(),
+        cat: '여행',
+        note: ev.note || '',
+        editable: true
+      });
+    });
+  });
+  updateHomeMissions();
+  calBuilt = false;
+} // 생성된 플랜 임시 저장
+
+// 기간 문자열 → 날짜 범위 계산
+function parsePeriodDays(periodStr, index, totalWeeks) {
+  const s = periodStr.replace(/\s/g,'');
+  // "1주차" → 0~6, "2주차" → 7~13, "2-3주차" → 7~20, "1개월" → 0~29 등
+  const rangeMatch = s.match(/(\d+)-(\d+)주차/);
+  if (rangeMatch) {
+    return { start: (parseInt(rangeMatch[1])-1)*7, end: parseInt(rangeMatch[2])*7-1 };
+  }
+  const singleMatch = s.match(/(\d+)주차/);
+  if (singleMatch) {
+    const w = parseInt(singleMatch[1]);
+    return { start: (w-1)*7, end: w*7-1 };
+  }
+  // 개월 단위
+  const monthMatch = s.match(/(\d+)개월/);
+  if (monthMatch) {
+    const m = parseInt(monthMatch[1]);
+    const weekStart = index * 7;
+    return { start: weekStart, end: weekStart + m*30 - 1 };
+  }
+  // fallback: 마지막 구간
+  return { start: index*7, end: index*7+13 };
+}
+
+// 시간 문자열 → 시간, 분 파싱
+function parseTimeStr(timeStr) {
+  const h = timeStr.match(/(\d+(?:\.\d+)?)\s*시간/);
+  const m = timeStr.match(/(\d+)\s*분/);
+  let totalMin = 60;
+  if (h) totalMin = Math.round(parseFloat(h[1]) * 60);
+  else if (m) totalMin = parseInt(m[1]);
+  return totalMin;
+}
+
+// 기본 시작 시간 (태스크 인덱스별 분배)
+const DEFAULT_START_HOURS = [9, 14, 20];
+
+// weeks 배열 → allCalEvents push
+function planWeeksToCalEvents(weeks, goal) {
+  const today = new Date();
+  const newEvents = [];
+  // 목표에서 카테고리 추출
+  const goalEntry = GOAL_POOL.find(g => goal.includes(g.label.replace(/[✨📖📐📝🔬🗺️📚📊🏆✍️📈🎯🗣️✏️💻🖥️🏛️🚗📋🚔🚒🏫🌅⚖️🚶💪🌊🌴🐟🚌🏘️🌿]/g,'').trim()));
+  const goalCat = goalEntry?.cat || (isTravel(goal) ? '여행' : '기타');
+
+  weeks.forEach((w, idx) => {
+    const { start, end } = parsePeriodDays(w.period, idx, weeks.length);
+    const durationMin = parseTimeStr(w.time || '1시간/일');
+    const sh = DEFAULT_START_HOURS[idx % 3];
+    const sm = 0;
+    const eh = sh + Math.floor(durationMin / 60);
+    const em = durationMin % 60;
+    for (let d = start; d <= end; d++) {
+      const date = new Date(today);
+      date.setDate(today.getDate() + d);
+      newEvents.push({
+        t: `🎯 ${w.task}`,
+        sh, sm, eh, em,
+        type: 'aip',
+        status: d === 0 ? 'active' : 'pending',
+        date: date.toDateString(),
+        cat: goalCat,
+        solution: w.solution || null,
+        dailyMissions: w.dailyMissions || [],
+        editable: true
+      });
+    }
+  });
+  // allCalEvents에 추가
+  newEvents.forEach(ev => allCalEvents.push(ev));
+  // 홈 미션 카드 업데이트
+  updateHomeMissions();
+  // 캘린더 재빌드
+  calBuilt = false;
+  return newEvents;
+}
+
+// 홈 화면 미션 카드 갱신
+function updateHomeMissions() {
+  const todayStr = new Date().toDateString();
+  const todayEvents = allCalEvents.filter(ev => ev.date === todayStr && ev.type === 'aip');
+  const list = document.getElementById('home-mission-list');
+  if (!list) return;
+  if (todayEvents.length === 0) return;
+  const timeLabel = h => `${String(h).padStart(2,'0')}:00`;
+  list.innerHTML = todayEvents.map(ev => `
+    <div class="mission-card ${ev.status||'pending'}" onclick="openMissionScreen(${JSON.stringify(ev).replace(/"/g,"'")})">
+      <div class="time-col"><div class="tdot ${ev.status||'pending'}"></div><div class="ttime">${timeLabel(ev.sh)}</div></div>
+      <div class="minfo"><div class="mtitle ${ev.status==='done'?'done':''}">${ev.t.replace('🎯 ','')}</div><div class="msub">${ev.status==='done'?'완료':ev.status==='active'?'지금 해야 해요':'예정'}</div></div>
+      <div class="mtag ${ev.status||'pending'}">${ev.status==='done'?'완료 ✓':ev.status==='active'?'⚡ 진행중':'예정'}</div>
+    </div>`).join('');
+}
+
 async function obStartNow() {
   const chat = document.getElementById('ob-chat');
   const lastChild = chat.lastChild;
   if(lastChild) lastChild.remove();
   await obAddBubble('지금 바로 시작! 🔥','user');
   obShowTyping(); await obD(900); obRemoveTyping();
+
+  // ── 실제로 캘린더에 이벤트 삽입 ──
+  if (obGeneratedTravel.length > 0) {
+    travelDaysToCalEvents(obGeneratedTravel);
+    savePlanToStorage(obGoal, {days: obGeneratedTravel}, 'travel');
+  } else if (obGeneratedWeeks.length > 0) {
+    planWeeksToCalEvents(obGeneratedWeeks, obGoal);
+    savePlanToStorage(obGoal, {weeks: obGeneratedWeeks}, 'normal');
+  }
+
   await obAddBubble('좋아요! 플랜 배치 완료했어요 🎯\n\n마지막으로 하나만 물어볼게요!\n구글 캘린더에 기존 일정이 있으면\n가져와서 AI 플랜에 반영할 수 있어요 📅','ai');
   await obD(300);
-  // 구글 캘린더 선택 카드
   const gcCard = document.createElement('div');
   gcCard.style.cssText = 'margin:4px 0 8px;background:linear-gradient(135deg,#e8f0fe,#f3e8ff);border:1.5px solid #c7d2fe;border-radius:14px;padding:12px 14px';
   gcCard.innerHTML = `
@@ -1640,10 +2550,24 @@ async function obConnectGoogle() {
   document.querySelector('.ob-send-btn').style.display='';
   await obAddBubble('구글 캘린더 가져올게요! 📅','user');
   obShowTyping(); await obD(1400); obRemoveTyping();
-  await obAddBubble('구글 캘린더에서 일정을 가져왔어요! 🎉\n파란색으로 표시되는 일정이에요.\n이제 AI 플랜이 빈 시간에 맞게 배치됐어요 🟣','ai');
+
+  // ── 구글 캘린더 샘플 이벤트 삽입 (실제 연동 대신 시뮬레이션) ──
+  const today = new Date();
+  const gcalSamples = [];
+  for (let d = 0; d < 14; d++) {
+    const date = new Date(today); date.setDate(today.getDate() + d);
+    const dow = date.getDay(); // 0=일, 6=토
+    if (dow !== 0 && dow !== 6) { // 평일만
+      gcalSamples.push({ t:'📅 기존 일정', sh:10, sm:0, eh:11, em:0, type:'gcal', date: date.toDateString() });
+    }
+  }
+  gcalSamples.forEach(ev => allCalEvents.push(ev));
+  calBuilt = false;
+
+  await obAddBubble('구글 캘린더에서 일정을 가져왔어요! 🎉\n🔵 파란색 = 가져온 일정\n🟣 보라색 = AI 플랜\n\nAI 플랜이 빈 시간에 맞게 배치됐어요 ✅','ai');
   await obD(600);
   document.getElementById('home-username').textContent = obName+'님의 오늘';
-  goTo('s040');
+  goTo('s030');
 }
 
 async function obSkipGoogle() {
@@ -1655,7 +2579,7 @@ async function obSkipGoogle() {
   await obAddBubble('알겠어요! 📅 캘린더에 AI 플랜을 배치했어요!\n설정에서 언제든 가져올 수 있어요 ✅','ai');
   await obD(600);
   document.getElementById('home-username').textContent = obName+'님의 오늘';
-  goTo('s040');
+  goTo('s030');
 }
 
 function obGuestStart() {
@@ -1678,7 +2602,7 @@ function obGuestStart() {
       const f = obFlow[1];
       await obAddBubble(typeof f.ai === 'function' ? f.ai('') : '어떤 목표를 이루고 싶으세요? 🎯', 'ai');
       document.getElementById('ob-input').placeholder = f.ph;
-      obShowChips(f.chips);
+      obShowChips(getSmartChips(4));
       obUpdateSteps(1);
       obStep = 1;
     }, 100);
@@ -1784,71 +2708,13 @@ function _applyCalFilter() {
   });
 }
 
-// 구글 캘린더 연동 데이터 (파란색)
+// 구글 캘린더 연동 데이터 (파란색) — AI 플랜 생성 후 채워짐
 const _td = new Date().toDateString();
-const gcEvents = [
-  { t:'🏫 경영학원론', sh:9, sm:0, eh:12, em:0, type:'gcal', date:_td },
-  { t:'🍱 점심 약속', sh:12, sm:0, eh:12, em:30, type:'gcal-g', date:_td },
-  { t:'☕ 카페 알바', sh:17, sm:0, eh:19, em:0, type:'gcal', date:_td },
-];
-// AI 플랜 데이터 (보라색)
-const aiPlanEvents = [
-  { t:'💪 아침 운동 30분', sh:7, sm:0, eh:7, em:30, type:'aip', status:'done', date:_td },
-  { t:'📚 파트5 문법 15문제', sh:8, sm:0, eh:8, em:30, type:'aip', status:'active', date:_td },
-  { t:'🎧 LC 쉐도잉 15분', sh:13, sm:0, eh:13, em:30, type:'aip', status:'pending', date:_td },
-  { t:'📖 영단어 암기 20개', sh:16, sm:0, eh:16, em:30, type:'aip', status:'pending', date:_td },
-  { t:'✏️ 오답 노트 복습', sh:21, sm:0, eh:21, em:30, type:'aip', status:'pending', date:_td },
-];
-// ── 월간 전체 이벤트 (날짜 포함, allCalEvents에 통합) ──
-const allMonthEvents = [
-  { t:'🏫 경영학원론', sh:9, sm:0, eh:12, em:0, type:'gcal', date:new Date(2026,4,1).toDateString() },
-  { t:'💪 아침운동', sh:7, sm:0, eh:7, em:30, type:'aip', status:'pending', date:new Date(2026,4,1).toDateString() },
-  { t:'🎏 어린이날 🎏', sh:9, sm:0, eh:10, em:0, type:'gcal', date:new Date(2026,4,5).toDateString() },
-  { t:'🏫 경영학원론', sh:9, sm:0, eh:12, em:0, type:'gcal', date:new Date(2026,4,6).toDateString() },
-  { t:'📚 파트5문법', sh:8, sm:0, eh:8, em:30, type:'aip', status:'pending', date:new Date(2026,4,6).toDateString() },
-  { t:'☕ 알바', sh:17, sm:0, eh:19, em:0, type:'gcal', date:new Date(2026,4,7).toDateString() },
-  { t:'📖 영단어', sh:16, sm:0, eh:16, em:30, type:'aip', status:'pending', date:new Date(2026,4,7).toDateString() },
-  { t:'🏫 경영학원론', sh:9, sm:0, eh:12, em:0, type:'gcal', date:new Date(2026,4,8).toDateString() },
-  { t:'🎧 LC쉐도잉', sh:13, sm:0, eh:13, em:30, type:'aip', status:'pending', date:new Date(2026,4,8).toDateString() },
-  { t:'📗 독서 모임', sh:14, sm:0, eh:16, em:0, type:'gcal', date:new Date(2026,4,9).toDateString() },
-  { t:'🏫 경영학원론', sh:9, sm:0, eh:12, em:0, type:'gcal', date:new Date(2026,4,10).toDateString() },
-  { t:'💪 아침운동', sh:7, sm:0, eh:7, em:30, type:'aip', status:'done', date:new Date(2026,4,10).toDateString() },
-  { t:'☕ 알바', sh:17, sm:0, eh:19, em:0, type:'gcal', date:new Date(2026,4,11).toDateString() },
-  { t:'🎧 LC쉐도잉', sh:13, sm:0, eh:13, em:30, type:'aip', status:'done', date:new Date(2026,4,11).toDateString() },
-  { t:'🏫 경영학원론', sh:9, sm:0, eh:12, em:0, type:'gcal', date:new Date(2026,4,12).toDateString() },
-  { t:'📚 파트5문법', sh:8, sm:0, eh:8, em:30, type:'aip', status:'done', date:new Date(2026,4,12).toDateString() },
-  { t:'✏️ 오답복습', sh:21, sm:0, eh:21, em:30, type:'aip', status:'done', date:new Date(2026,4,12).toDateString() },
-  { t:'🏫 경영학원론', sh:9, sm:0, eh:12, em:0, type:'gcal', date:new Date(2026,4,13).toDateString() },
-  { t:'💪 아침운동', sh:7, sm:0, eh:7, em:30, type:'aip', status:'done', date:new Date(2026,4,13).toDateString() },
-  { t:'📚 파트5문법', sh:8, sm:0, eh:8, em:30, type:'aip', status:'active', date:new Date(2026,4,13).toDateString() },
-  { t:'☕ 알바', sh:17, sm:0, eh:19, em:0, type:'gcal', date:new Date(2026,4,13).toDateString() },
-  { t:'🎧 LC쉐도잉', sh:13, sm:0, eh:13, em:30, type:'aip', status:'pending', date:new Date(2026,4,13).toDateString() },
-  { t:'🏫 경영학원론', sh:9, sm:0, eh:12, em:0, type:'gcal', date:new Date(2026,4,14).toDateString() },
-  { t:'💪 아침운동', sh:7, sm:0, eh:7, em:30, type:'aip', status:'pending', date:new Date(2026,4,14).toDateString() },
-  { t:'📖 영단어', sh:16, sm:0, eh:16, em:30, type:'aip', status:'pending', date:new Date(2026,4,14).toDateString() },
-  { t:'☕ 알바', sh:17, sm:0, eh:19, em:0, type:'gcal', date:new Date(2026,4,16).toDateString() },
-  { t:'✏️ 오답복습', sh:21, sm:0, eh:21, em:30, type:'aip', status:'pending', date:new Date(2026,4,16).toDateString() },
-  { t:'🏫 경영학원론', sh:9, sm:0, eh:12, em:0, type:'gcal', date:new Date(2026,4,17).toDateString() },
-  { t:'💪 아침운동', sh:7, sm:0, eh:7, em:30, type:'aip', status:'pending', date:new Date(2026,4,17).toDateString() },
-  { t:'☕ 알바', sh:17, sm:0, eh:19, em:0, type:'gcal', date:new Date(2026,4,18).toDateString() },
-  { t:'🎧 LC쉐도잉', sh:13, sm:0, eh:13, em:30, type:'aip', status:'pending', date:new Date(2026,4,18).toDateString() },
-  { t:'🏫 경영학원론', sh:9, sm:0, eh:12, em:0, type:'gcal', date:new Date(2026,4,19).toDateString() },
-  { t:'📖 영단어', sh:16, sm:0, eh:16, em:30, type:'aip', status:'pending', date:new Date(2026,4,19).toDateString() },
-  { t:'✏️ 오답복습', sh:21, sm:0, eh:21, em:30, type:'aip', status:'pending', date:new Date(2026,4,19).toDateString() },
-  { t:'🏫 경영학원론', sh:9, sm:0, eh:12, em:0, type:'gcal', date:new Date(2026,4,20).toDateString() },
-  { t:'🏫 경영학원론', sh:9, sm:0, eh:12, em:0, type:'gcal', date:new Date(2026,4,22).toDateString() },
-  { t:'☕ 알바', sh:17, sm:0, eh:19, em:0, type:'gcal', date:new Date(2026,4,22).toDateString() },
-  { t:'📝 토익 모의고사', sh:10, sm:0, eh:13, em:0, type:'gcal', date:new Date(2026,4,23).toDateString() },
-  { t:'🏫 경영학원론', sh:9, sm:0, eh:12, em:0, type:'gcal', date:new Date(2026,4,24).toDateString() },
-  { t:'📚 파트5문법', sh:8, sm:0, eh:8, em:30, type:'aip', status:'pending', date:new Date(2026,4,24).toDateString() },
-  { t:'☕ 알바', sh:17, sm:0, eh:19, em:0, type:'gcal', date:new Date(2026,4,25).toDateString() },
-  { t:'🎧 LC쉐도잉', sh:13, sm:0, eh:13, em:30, type:'aip', status:'pending', date:new Date(2026,4,25).toDateString() },
-  { t:'🏫 경영학원론', sh:9, sm:0, eh:12, em:0, type:'gcal', date:new Date(2026,4,27).toDateString() },
-  { t:'💪 아침운동', sh:7, sm:0, eh:7, em:30, type:'aip', status:'pending', date:new Date(2026,4,27).toDateString() },
-  { t:'📅 토익 D-27', sh:10, sm:0, eh:10, em:30, type:'gcal', date:new Date(2026,4,28).toDateString() },
-  { t:'🏫 경영학원론', sh:9, sm:0, eh:12, em:0, type:'gcal', date:new Date(2026,4,29).toDateString() },
-  { t:'☕ 알바', sh:17, sm:0, eh:19, em:0, type:'gcal', date:new Date(2026,4,29).toDateString() }
-];
+const gcEvents = [];
+// AI 플랜 데이터 (보라색) — 온보딩 플랜 생성 후 채워짐
+const aiPlanEvents = [];
+// ── 월간 전체 이벤트 — AI 플랜 생성 후 채워짐 ──
+const allMonthEvents = [];
 // allCalEvents는 아래 perDayDetailEvents 선언 후 합산됨
 
 function evTop(h, m) { return (h - CAL_START) * HPXCAL + m; }
@@ -1912,33 +2778,8 @@ function buildCalWeekStrip(refDate) {
 
 // ── 날짜별 이벤트 데이터 ──
 
-// ── 상세 일간 이벤트 (perDayEvents → allCalEvents로 통합) ──
-const perDayDetailEvents = [
-  {t:'🏫 경영학원론',sh:9,sm:0,eh:12,em:0,type:'gcal',date:new Date(2026,4,11).toDateString()},
-  {t:'☕ 카페 알바',sh:17,sm:0,eh:19,em:0,type:'gcal',date:new Date(2026,4,11).toDateString()},
-  {t:'💪 아침 운동 30분',sh:7,sm:0,eh:7,em:30,type:'aip',status:'done',date:new Date(2026,4,11).toDateString()},
-  {t:'📚 파트5 문법',sh:8,sm:0,eh:8,em:30,type:'aip',status:'done',date:new Date(2026,4,11).toDateString()},
-  {t:'🎧 LC 쉐도잉',sh:20,sm:0,eh:20,em:30,type:'aip',status:'done',date:new Date(2026,4,11).toDateString()},
-
-  {t:'🏫 경영학원론',sh:9,sm:0,eh:12,em:0,type:'gcal',date:new Date(2026,4,12).toDateString()},
-  {t:'💪 아침 운동',sh:7,sm:0,eh:7,em:30,type:'aip',status:'done',date:new Date(2026,4,12).toDateString()},
-  {t:'📚 파트5 문법',sh:8,sm:0,eh:8,em:30,type:'aip',status:'done',date:new Date(2026,4,12).toDateString()},
-  {t:'✏️ 오답 노트',sh:21,sm:0,eh:21,em:30,type:'aip',status:'done',date:new Date(2026,4,12).toDateString()},
-
-  {t:'🏫 경영학원론',sh:9,sm:0,eh:12,em:0,type:'gcal',date:new Date(2026,4,14).toDateString()},
-  {t:'💪 아침 운동',sh:7,sm:0,eh:7,em:30,type:'aip',date:new Date(2026,4,14).toDateString()},
-  {t:'📚 파트5 문법',sh:8,sm:0,eh:8,em:30,type:'aip',date:new Date(2026,4,14).toDateString()},
-  {t:'📖 영단어 암기',sh:14,sm:0,eh:14,em:30,type:'aip',date:new Date(2026,4,14).toDateString()},
-  {t:'✏️ 오답 노트',sh:21,sm:0,eh:21,em:30,type:'aip',date:new Date(2026,4,14).toDateString()},
-
-  {t:'🏫 경영학원론',sh:9,sm:0,eh:12,em:0,type:'gcal',date:new Date(2026,4,16).toDateString()},
-  {t:'☕ 카페 알바',sh:10,sm:0,eh:15,em:0,type:'gcal',date:new Date(2026,4,16).toDateString()},
-  {t:'📖 영단어 암기',sh:16,sm:0,eh:16,em:30,type:'aip',date:new Date(2026,4,16).toDateString()},
-  {t:'✏️ 오답 노트',sh:20,sm:0,eh:20,em:30,type:'aip',date:new Date(2026,4,16).toDateString()},
-
-  {t:'💪 아침 운동',sh:9,sm:0,eh:9,em:30,type:'aip',date:new Date(2026,4,17).toDateString()},
-  {t:'📚 토익 실전 연습',sh:14,sm:0,eh:16,em:0,type:'aip',date:new Date(2026,4,17).toDateString()},
-];
+// ── 상세 일간 이벤트 — AI 플랜 생성 후 채워짐 ──
+const perDayDetailEvents = [];
 
 const allCalEvents = [...gcEvents, ...aiPlanEvents, ...allMonthEvents, ...perDayDetailEvents];
 
@@ -2062,34 +2903,42 @@ let fcIdx=0, fcFlipped=false;
 
 function openMissionScreen(ev){
   const isAi   = ev.type==='aip';
-  const isGcal = !isAi;
   const title  = ev.t.replace(/^\S+\s*/,'');
   const icon   = ev.t.match(/^(\S+)/)?.[1]||'📅';
 
-  // 헤더 설정
   document.getElementById('mc-dyn-icon').textContent  = icon;
   document.getElementById('mc-dyn-title').textContent = title;
-  document.getElementById('mc-dyn-sub').textContent   = isAi ? '✦ AI 플랜 · 솔루션' : '📅 구글 캘린더 일정';
+  document.getElementById('mc-dyn-sub').textContent   = isAi ? '✦ AI 플랜 · 미션' : '📅 구글 캘린더 일정';
   document.getElementById('mc-dyn-label').textContent = isAi ? 'AI 코치' : '일정 정보';
 
-  // 타입 판별
-  const t = ev.t.toLowerCase();
-  let type = 'gcal';
-  if(isAi){
-    if(t.includes('운동')||t.includes('workout')) type='exercise';
-    else if(t.includes('문법')||t.includes('파트5')||t.includes('grammar')) type='grammar';
-    else if(t.includes('쉐도잉')||t.includes('lc')||t.includes('듣기')) type='listening';
-    else if(t.includes('영단어')||t.includes('단어')||t.includes('vocab')) type='vocab';
-    else if(t.includes('오답')||t.includes('복습')||t.includes('review')) type='review';
-    else type='aiplan';
+  // ── 카테고리 기반 타입 판별 ──
+  const cat = ev.cat || '';
+  const t   = ev.t.toLowerCase();
+  let type  = 'gcal';
+
+  if (isAi) {
+    const STUDY_CATS  = ['중등','고등','대학','자격증','공무원'];
+    const LANG_CATS   = ['영어','어학'];
+    const HEALTH_CATS = ['건강'];
+    if (STUDY_CATS.includes(cat))                         type = 'study_quiz';
+    else if (LANG_CATS.includes(cat))                     type = 'lang_quiz';
+    else if (cat === '코딩')                               type = 'code_quiz';
+    else if (HEALTH_CATS.includes(cat) || t.includes('운동') || t.includes('런닝') || t.includes('헬스')) type = 'exercise';
+    else if (cat === '습관')                               type = 'habit';
+    else if (cat === '독서')                               type = 'reading';
+    else if (cat === '예체능')                             type = 'artskill';
+    else if (cat === '여행')                               type = 'travel_ev';
+    else if (t.includes('단어')||t.includes('vocab'))      type = 'vocab';
+    else if (t.includes('문법')||t.includes('grammar'))    type = 'grammar';
+    else if (t.includes('쉐도잉')||t.includes('lc'))       type = 'listening';
+    else if (t.includes('오답')||t.includes('복습'))       type = 'review';
+    else                                                   type = 'study_quiz'; // 기본은 퀴즈
   }
 
   const content = document.getElementById('mc-dyn-content');
   content.innerHTML = '';
-
   const S = (html)=>{ const d=document.createElement('div'); d.innerHTML=html; content.appendChild(d); };
 
-  // ── 미션 상태 배지 ──
   const timeStr=`${String(ev.sh).padStart(2,'0')}:${String(ev.sm).padStart(2,'0')} – ${String(ev.eh).padStart(2,'0')}:${String(ev.em).padStart(2,'0')}`;
   const stColor=ev.status==='done'?'#059669':ev.status==='active'?'#7c3aed':'#6b7280';
   const stLabel=ev.status==='done'?'완료 ✓':ev.status==='active'?'⚡ 진행중':'예정';
@@ -2098,7 +2947,128 @@ function openMissionScreen(ev){
     <span style="font-size:10px;font-weight:700;color:${stColor};background:${stColor}18;padding:2px 8px;border-radius:10px">${stLabel}</span>
   </div>`);
 
-  if(type==='exercise'){
+  // ── 학습 퀴즈 (중등·고등·대학·자격증·공무원) ──
+  if (type === 'study_quiz' || type === 'lang_quiz' || type === 'code_quiz') {
+    const headerColors = {
+      study_quiz: 'linear-gradient(135deg,#4f46e5,#7c3aed)',
+      lang_quiz:  'linear-gradient(135deg,#0ea5e9,#6366f1)',
+      code_quiz:  'linear-gradient(135deg,#059669,#10b981)',
+    };
+    document.getElementById('mc-dyn-header').style.background = headerColors[type];
+
+    const quizLabel = type==='code_quiz' ? '💻 코딩 문제' : type==='lang_quiz' ? '🌍 어학 문제' : '📝 AI 학습 문제';
+    S(`<div style="padding:14px 20px 0">
+      <div style="font-size:12px;font-weight:800;color:var(--p);margin-bottom:10px">${quizLabel}</div>
+      <div id="quiz-ai-wrap" style="background:var(--g50);border-radius:14px;padding:20px;border:1px solid var(--g100);text-align:center">
+        <div style="font-size:28px;margin-bottom:8px">🤖</div>
+        <div style="font-size:13px;font-weight:700;color:var(--g700)">AI가 문제를 만들고 있어요...</div>
+        <div style="font-size:11px;color:var(--g400);margin-top:4px">${ev.t.replace(/^[^\s]+\s*/,'')} 관련 문제예요</div>
+      </div>
+    </div>`);
+    _mcAiMsg(`${ev.t.replace(/^[^\s]+\s*/,'')} 관련 문제를 만들고 있어요! 잠깐만요 🤖`);
+    setTimeout(() => generateAIQuiz(ev, type), 500);
+  }
+
+  // ── 습관 타이머 ──
+  else if (type === 'habit') {
+    document.getElementById('mc-dyn-header').style.background = 'linear-gradient(135deg,#8b5cf6,#a855f7)';
+    const durMin = (ev.eh - ev.sh) * 60 + (ev.em - ev.sm) || 30;
+    S(`<div style="padding:14px 20px">
+      <div style="font-size:12px;font-weight:800;color:#7c3aed;margin-bottom:12px">⏱️ 습관 타이머</div>
+      <div style="background:linear-gradient(135deg,#f5f3ff,#ede9fe);border-radius:18px;padding:24px;text-align:center;border:1.5px solid #ddd6fe">
+        <div style="font-size:48px;font-weight:900;color:#7c3aed;font-family:'Outfit',sans-serif" id="habit-timer">${String(durMin).padStart(2,'0')}:00</div>
+        <div style="font-size:11px;color:#9ca3af;margin-top:4px">목표 시간</div>
+        <div style="display:flex;gap:10px;margin-top:16px;justify-content:center">
+          <button onclick="habitTimerStart(${durMin})" style="padding:10px 24px;background:linear-gradient(135deg,#7c3aed,#a855f7);border:none;border-radius:12px;color:white;font-size:14px;font-weight:700;cursor:pointer;font-family:'Noto Sans KR',sans-serif">▶ 시작</button>
+          <button onclick="habitTimerReset(${durMin})" style="padding:10px 18px;background:white;border:1.5px solid #ddd6fe;border-radius:12px;color:#7c3aed;font-size:14px;font-weight:700;cursor:pointer;font-family:'Noto Sans KR',sans-serif">↺ 초기화</button>
+        </div>
+      </div>
+      ${ev.dailyMissions?.length ? `
+      <div style="margin-top:14px">
+        <div style="font-size:12px;font-weight:800;color:var(--g700);margin-bottom:8px">📋 오늘의 체크리스트</div>
+        ${ev.dailyMissions.map((m,i)=>`
+          <label style="display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--g50);border-radius:12px;margin-bottom:7px;cursor:pointer;border:1px solid var(--g100)">
+            <input type="checkbox" style="width:18px;height:18px;accent-color:#7c3aed" onchange="if(this.checked)this.parentElement.style.opacity='.5'">
+            <span style="font-size:12.5px;font-weight:600;color:var(--g800)">${m}</span>
+          </label>`).join('')}
+      </div>` : ''}
+    </div>`);
+    window.habitTimerInterval = null;
+    window.habitTimerStart = (min) => {
+      let sec = min * 60;
+      clearInterval(window.habitTimerInterval);
+      window.habitTimerInterval = setInterval(() => {
+        sec--;
+        const el = document.getElementById('habit-timer');
+        if (!el) { clearInterval(window.habitTimerInterval); return; }
+        if (sec <= 0) {
+          clearInterval(window.habitTimerInterval);
+          el.textContent = '완료! 🎉';
+          el.style.color = '#059669';
+          _mcAiMsg('🎉 습관 미션 완료! 오늘도 꾸준히 해냈어요. 작은 반복이 큰 변화를 만들어요 ✨');
+        } else {
+          el.textContent = `${String(Math.floor(sec/60)).padStart(2,'0')}:${String(sec%60).padStart(2,'0')}`;
+        }
+      }, 1000);
+    };
+    window.habitTimerReset = (min) => {
+      clearInterval(window.habitTimerInterval);
+      const el = document.getElementById('habit-timer');
+      if (el) { el.textContent = `${String(min).padStart(2,'0')}:00`; el.style.color='#7c3aed'; }
+    };
+    _mcAiMsg(`${title} 습관 미션이에요! 타이머 시작하고 집중해봐요. 매일 반복이 핵심이에요 ⏱️`);
+  }
+
+  // ── 독서 기록 ──
+  else if (type === 'reading') {
+    document.getElementById('mc-dyn-header').style.background = 'linear-gradient(135deg,#059669,#10b981)';
+    S(`<div style="padding:14px 20px">
+      <div style="font-size:12px;font-weight:800;color:#065f46;margin-bottom:12px">📗 오늘의 독서 기록</div>
+      <div style="background:#f0fdf4;border-radius:14px;padding:16px;border:1.5px solid #bbf7d0">
+        <div style="font-size:11px;font-weight:700;color:#065f46;margin-bottom:8px">오늘 읽은 페이지</div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+          <input type="number" id="read-from" placeholder="시작" style="flex:1;padding:10px;border:1.5px solid #bbf7d0;border-radius:10px;font-size:14px;text-align:center;outline:none">
+          <span style="color:#065f46;font-weight:700">~</span>
+          <input type="number" id="read-to" placeholder="끝" style="flex:1;padding:10px;border:1.5px solid #bbf7d0;border-radius:10px;font-size:14px;text-align:center;outline:none">
+          <span style="font-size:12px;color:#065f46;font-weight:700">쪽</span>
+        </div>
+        <div style="font-size:11px;font-weight:700;color:#065f46;margin-bottom:6px">오늘 인상 깊었던 내용</div>
+        <textarea id="read-memo" placeholder="한 줄 메모..." style="width:100%;height:70px;padding:10px;border:1.5px solid #bbf7d0;border-radius:10px;font-size:12px;font-family:'Noto Sans KR',sans-serif;resize:none;outline:none;box-sizing:border-box"></textarea>
+        <button onclick="saveReadingLog()" style="width:100%;height:40px;background:linear-gradient(135deg,#059669,#10b981);border:none;border-radius:10px;color:white;font-size:13px;font-weight:700;cursor:pointer;margin-top:10px;font-family:'Noto Sans KR',sans-serif">📗 독서 기록 저장</button>
+      </div>
+    </div>`);
+    window.saveReadingLog = () => {
+      const from = document.getElementById('read-from')?.value;
+      const to   = document.getElementById('read-to')?.value;
+      const memo = document.getElementById('read-memo')?.value;
+      if (from && to) {
+        const pages = parseInt(to) - parseInt(from);
+        _mcAiMsg(`📗 오늘 ${pages}페이지 완독했어요! ${memo ? `"${memo.slice(0,30)}..."` : ''} 꾸준한 독서 습관이 만들어지고 있어요 ✨`);
+      }
+    };
+    _mcAiMsg(`${title} 독서 미션이에요! 오늘 읽은 페이지를 기록하고 인상 깊은 내용을 메모해보세요 📗`);
+  }
+
+  // ── 예체능 체크리스트 ──
+  else if (type === 'artskill') {
+    document.getElementById('mc-dyn-header').style.background = 'linear-gradient(135deg,#f43f5e,#ec4899)';
+    const artMissions = ev.dailyMissions?.length ? ev.dailyMissions : ['기본 연습 30분','반복 구간 집중 연습','오늘 배운 것 정리'];
+    S(`<div style="padding:14px 20px">
+      <div style="font-size:12px;font-weight:800;color:#be185d;margin-bottom:12px">🎨 오늘의 연습 미션</div>
+      ${artMissions.map((m,i)=>`
+        <label style="display:flex;align-items:center;gap:10px;padding:10px 12px;background:#fff1f2;border-radius:12px;margin-bottom:7px;cursor:pointer;border:1px solid #fecdd3">
+          <input type="checkbox" style="width:18px;height:18px;accent-color:#f43f5e" onchange="if(this.checked)this.parentElement.style.opacity='.5'">
+          <span style="font-size:12.5px;font-weight:600;color:#881337">${m}</span>
+        </label>`).join('')}
+      ${ev.solution ? `<div style="background:linear-gradient(135deg,#fff1f2,#fce7f3);border-radius:12px;padding:12px 14px;border:1.5px solid #fecdd3;margin-top:8px">
+        <div style="font-size:10px;font-weight:800;color:#f43f5e;margin-bottom:5px">💡 오늘의 팁</div>
+        <div style="font-size:12.5px;color:#881337;line-height:1.6">${ev.solution}</div>
+      </div>` : ''}
+    </div>`);
+    _mcAiMsg(`${title} 연습 미션이에요! 체크리스트 하나씩 완성해봐요. 꾸준한 반복이 실력을 만들어요 🎨`);
+  }
+
+  else if(type==='exercise'){
     document.getElementById('mc-dyn-header').style.background='linear-gradient(135deg,#059669,#10b981)';
     S(`<div style="padding:12px 20px 0">
       <div style="font-size:12px;font-weight:700;color:#065f46;margin-bottom:8px">🎬 오늘의 운동 영상</div>
@@ -2296,6 +3266,35 @@ function openMissionScreen(ev){
     _mcAiMsg('구글 캘린더에서 가져온 일정이에요 📥 수정하거나 삭제해도 구글에는 영향 없어요. AI 플랜 이벤트(보라색)를 탭하면 미션과 솔루션을 볼 수 있어요!');
   }
 
+  // ── AI 이벤트면 solution + dailyMissions 추가 렌더 ──
+  if (isAi && (ev.solution || ev.dailyMissions?.length)) {
+    if (ev.solution) {
+      S(`<div style="margin:0 20px 10px;background:linear-gradient(135deg,#eef2ff,#f5f3ff);border-radius:14px;padding:14px 16px;border:1.5px solid #c7d2fe">
+        <div style="font-size:10px;font-weight:800;color:#4f46e5;letter-spacing:0.5px;margin-bottom:7px">💡 AI 솔루션</div>
+        <div style="font-size:13px;font-weight:600;color:#1e1b4b;line-height:1.6">${ev.solution}</div>
+      </div>`);
+    }
+    if (ev.dailyMissions?.length) {
+      const checks = ev.dailyMissions.map((m, i) => `
+        <label style="display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--g50);border-radius:12px;margin-bottom:7px;cursor:pointer;border:1px solid var(--g100)">
+          <input type="checkbox" id="dm${i}" style="width:18px;height:18px;accent-color:var(--p)"
+            onchange="if(this.checked){this.parentElement.style.opacity='.5'}else{this.parentElement.style.opacity='1'}">
+          <span style="font-size:12.5px;font-weight:600;color:var(--g800)">${m}</span>
+        </label>`).join('');
+      S(`<div style="padding:0 20px 10px">
+        <div style="font-size:12px;font-weight:800;color:var(--g700);margin-bottom:8px">📋 오늘의 세부 미션</div>
+        ${checks}
+      </div>`);
+    }
+  } else if (isAi && type === 'aiplan') {
+    // solution 없는 일반 AI 이벤트 — Claude에게 실시간으로 받아오기
+    S(`<div id="ai-solution-loading" style="margin:0 20px 10px;background:#f9fafb;border-radius:14px;padding:14px 16px;border:1px solid var(--g100)">
+      <div style="font-size:11px;color:var(--g400);text-align:center">💡 AI가 솔루션을 생성하고 있어요...</div>
+    </div>`);
+    // 비동기로 solution 생성
+    setTimeout(() => generateMissionSolution(ev), 400);
+  }
+
   // 미션 완료 버튼 (AI 이벤트이고 아직 완료 안 됐으면)
   if(isAi && ev.status!=='done'){
     const doneWrap=document.createElement('div');
@@ -2306,6 +3305,206 @@ function openMissionScreen(ev){
 
   document.getElementById('mc-chat').innerHTML='';
   goTo('s050');
+}
+
+async function generateAIQuiz(ev, type) {
+  const task = ev.t.replace(/^[^\s]+\s*/, '');
+  const cat  = ev.cat || '';
+
+  const quizType = type === 'code_quiz' ? '코딩 개념/문법'
+    : type === 'lang_quiz' ? '어학/언어 학습'
+    : '학습';
+
+  const sysPrompt = `You are LIKEIT AI quiz maker. Output ONLY valid JSON.
+Create 3 multiple-choice questions about "${task}" for ${quizType} practice.
+Questions must be SPECIFIC and educational. Korean language.
+
+{
+  "questions": [
+    {
+      "q": "문제 (구체적이고 실제 학습에 도움 되는 문제)",
+      "opts": ["보기1", "보기2", "보기3", "보기4"],
+      "ans": 0,
+      "exp": "정답 해설 — 왜 이게 정답인지, 관련 개념 설명 (2~3문장)"
+    }
+  ]
+}
+ans is 0-indexed. Output ONLY JSON.`;
+
+  const reply = await callClaude([{role:'user', content:`Task: ${task}, Category: ${cat}`}], sysPrompt, 800);
+  const wrap = document.getElementById('quiz-ai-wrap');
+  if (!wrap) return;
+
+  let questions = [];
+  if (reply) {
+    try {
+      let j = reply.replace(/```json|```/g,'').trim();
+      const m = j.match(/\{[\s\S]*\}/); if(m) j=m[0];
+      questions = JSON.parse(j).questions || [];
+    } catch(e) {}
+  }
+
+  if (!questions.length) {
+    // API 없을 때 기본 문제
+    questions = [{
+      q: `${task}와 관련된 핵심 개념은 무엇인가요?`,
+      opts: ['기본 개념 이해','심화 학습','반복 연습','모두 해당'],
+      ans: 3,
+      exp: 'API 연결 후 실제 문제가 생성돼요. 지금은 기본 학습을 진행해보세요!'
+    }];
+  }
+
+  renderAIQuiz(questions, wrap.parentElement);
+  _mcAiMsg(`${task} 문제 ${questions.length}개 준비했어요! 하나씩 풀어봐요 📝`);
+}
+
+let aiQuizIdx = 0;
+let aiQuizData = [];
+
+function renderAIQuiz(questions, container) {
+  aiQuizData = questions;
+  aiQuizIdx  = 0;
+  const wrap = document.getElementById('quiz-ai-wrap')?.parentElement || container;
+  if (!wrap) return;
+  wrap.innerHTML = `
+    <div style="padding:14px 20px 0">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+        <span style="font-size:12px;font-weight:800;color:var(--p)">📝 AI 생성 문제</span>
+        <span style="font-size:11px;color:var(--g400)" id="aq-prog">1 / ${questions.length}</span>
+      </div>
+      <div id="aq-wrap"></div>
+    </div>`;
+  showAIQuestion();
+}
+
+function showAIQuestion() {
+  const q   = aiQuizData[aiQuizIdx];
+  const wrap = document.getElementById('aq-wrap');
+  if (!wrap || !q) return;
+
+  wrap.innerHTML = `
+    <div style="background:var(--g50);border-radius:14px;padding:14px 16px;border:1px solid var(--g100);margin-bottom:10px">
+      <div style="font-size:13.5px;font-weight:700;color:var(--g900);line-height:1.6;margin-bottom:14px">${q.q}</div>
+      <div id="aq-opts" style="display:flex;flex-direction:column;gap:8px">
+        ${q.opts.map((o,i)=>`
+          <button onclick="checkAIAnswer(${i})" id="aqo${i}"
+            style="padding:11px 14px;border:1.5px solid var(--g200);border-radius:12px;background:white;font-size:12.5px;font-weight:600;color:var(--g700);text-align:left;cursor:pointer;font-family:'Noto Sans KR',sans-serif;transition:all 0.15s">
+            <span style="font-weight:800;color:var(--p);margin-right:8px">${['①','②','③','④'][i]}</span>${o}
+          </button>`).join('')}
+      </div>
+      <div id="aq-exp" style="display:none;margin-top:12px;padding:12px 14px;border-radius:12px;font-size:12px;line-height:1.6;font-weight:600"></div>
+    </div>`;
+  const prog = document.getElementById('aq-prog');
+  if (prog) prog.textContent = `${aiQuizIdx+1} / ${aiQuizData.length}`;
+}
+
+function checkAIAnswer(idx) {
+  const q    = aiQuizData[aiQuizIdx];
+  const exp  = document.getElementById('aq-exp');
+  const opts = document.getElementById('aq-opts');
+  if (!opts) return;
+
+  // 모든 버튼 비활성화
+  opts.querySelectorAll('button').forEach((btn, i) => {
+    btn.style.cursor = 'default';
+    btn.onclick = null;
+    if (i === q.ans) {
+      btn.style.background = '#dcfce7'; btn.style.borderColor = '#16a34a'; btn.style.color = '#15803d';
+    } else if (i === idx && idx !== q.ans) {
+      btn.style.background = '#fee2e2'; btn.style.borderColor = '#dc2626'; btn.style.color = '#991b1b';
+    }
+  });
+
+  const correct = idx === q.ans;
+  if (exp) {
+    exp.style.display = 'block';
+    exp.style.background = correct ? '#f0fdf4' : '#fff1f2';
+    exp.style.color      = correct ? '#15803d' : '#991b1b';
+    exp.style.border     = `1.5px solid ${correct ? '#bbf7d0' : '#fecdd3'}`;
+    exp.innerHTML = correct
+      ? `✅ <strong>정답!</strong> ${q.exp}`
+      : `❌ <strong>오답.</strong> 정답은 <strong>${['①','②','③','④'][q.ans]} ${q.opts[q.ans]}</strong><br><br>💡 ${q.exp}`;
+  }
+
+  _mcAiMsg(correct ? `✅ 정답이에요! ${aiQuizIdx+1}/${aiQuizData.length}번 문제 완료!` : `❌ 아쉬워요! 해설을 꼭 읽어보세요. 다음엔 맞출 수 있어요 💪`);
+
+  // 다음 문제 버튼
+  const wrap = document.getElementById('aq-wrap');
+  if (wrap) {
+    const nextBtn = document.createElement('div');
+    nextBtn.style.cssText = 'margin-top:10px';
+    if (aiQuizIdx < aiQuizData.length - 1) {
+      nextBtn.innerHTML = `<button onclick="aiQuizNext()" style="width:100%;height:44px;background:linear-gradient(135deg,var(--p),var(--p2));border:none;border-radius:12px;color:white;font-size:13px;font-weight:700;cursor:pointer;font-family:'Noto Sans KR',sans-serif">다음 문제 →</button>`;
+    } else {
+      nextBtn.innerHTML = `<button onclick="aiQuizFinish()" style="width:100%;height:44px;background:linear-gradient(135deg,#059669,#10b981);border:none;border-radius:12px;color:white;font-size:13px;font-weight:700;cursor:pointer;font-family:'Noto Sans KR',sans-serif">🎉 모든 문제 완료! +200 XP</button>`;
+    }
+    wrap.appendChild(nextBtn);
+  }
+}
+
+function aiQuizNext() {
+  aiQuizIdx++;
+  showAIQuestion();
+}
+
+function aiQuizFinish() {
+  const wrap = document.getElementById('aq-wrap');
+  if (wrap) wrap.innerHTML = `
+    <div style="text-align:center;padding:30px 20px;background:linear-gradient(135deg,#eef2ff,#f5f3ff);border-radius:14px;border:1.5px solid #c7d2fe">
+      <div style="font-size:36px;margin-bottom:10px">🎉</div>
+      <div style="font-size:16px;font-weight:900;color:var(--p)">모든 문제 완료!</div>
+      <div style="font-size:12px;color:var(--g500);margin-top:6px">+200 XP 획득했어요</div>
+    </div>`;
+  _mcAiMsg('🎉 모든 문제를 풀었어요! 틀린 문제는 다시 복습하면 완벽해요. 오늘도 잘 했어요 💪');
+}
+
+async function generateMissionSolution(ev) {
+  const task = ev.t.replace(/^[^\s]+\s*/, '');
+  const sysPrompt = `You are LIKEIT AI mentor. Output ONLY valid JSON.
+For the mission "${task}", generate:
+{
+  "solution": "이 미션을 효과적으로 수행하는 구체적 방법 2~3문장 (한국어)",
+  "dailyMissions": ["구체적 세부 할 일 1", "구체적 세부 할 일 2", "구체적 세부 할 일 3"]
+}
+Make it SPECIFIC to "${task}". Output ONLY JSON.`;
+
+  const reply = await callClaude([{role:'user', content:task}], sysPrompt, 400);
+  const loading = document.getElementById('ai-solution-loading');
+
+  if (!loading) return;
+  let solution = null, missions = [];
+
+  if (reply) {
+    try {
+      let j = reply.replace(/```json|```/g,'').trim();
+      const m = j.match(/\{[\s\S]*\}/); if(m) j=m[0];
+      const p = JSON.parse(j);
+      solution = p.solution; missions = p.dailyMissions || [];
+    } catch(e) {}
+  }
+
+  if (!solution) {
+    loading.innerHTML = `<div style="font-size:11px;color:var(--g400);text-align:center">API 연결 후 솔루션이 자동 생성돼요</div>`;
+    return;
+  }
+
+  // solution 렌더링
+  loading.outerHTML = `
+    <div style="margin:0 20px 10px;background:linear-gradient(135deg,#eef2ff,#f5f3ff);border-radius:14px;padding:14px 16px;border:1.5px solid #c7d2fe">
+      <div style="font-size:10px;font-weight:800;color:#4f46e5;letter-spacing:0.5px;margin-bottom:7px">💡 AI 솔루션</div>
+      <div style="font-size:13px;font-weight:600;color:#1e1b4b;line-height:1.6">${solution}</div>
+    </div>
+    <div style="padding:0 20px 10px">
+      <div style="font-size:12px;font-weight:800;color:var(--g700);margin-bottom:8px">📋 오늘의 세부 미션</div>
+      ${missions.map((m,i) => `
+        <label style="display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--g50);border-radius:12px;margin-bottom:7px;cursor:pointer;border:1px solid var(--g100)">
+          <input type="checkbox" id="dm${i}" style="width:18px;height:18px;accent-color:var(--p)"
+            onchange="if(this.checked){this.parentElement.style.opacity='.5'}else{this.parentElement.style.opacity='1'}">
+          <span style="font-size:12.5px;font-weight:600;color:var(--g800)">${m}</span>
+        </label>`).join('')}
+    </div>`;
+
+  _mcAiMsg(`💡 ${task} — 위 솔루션대로 진행해봐요! 세부 미션 하나씩 체크하면서 완료하세요 ✅`);
 }
 
 window.completeMission=(btn)=>{
@@ -2730,6 +3929,248 @@ const recTabData = {
     bars:[68,72,75,80,78,81]
   }
 };
+
+// ════════════════════════════════════════
+// ── 기록 화면 · AI 인기 플랜 카테고리 ──
+// ════════════════════════════════════════
+const CAT_META = {
+  '전체':  {icon:'✨', color:'#4f46e5'},
+  '중등':  {icon:'📖', color:'#6366f1'},
+  '고등':  {icon:'📚', color:'#7c3aed'},
+  '영어':  {icon:'🎯', color:'#0ea5e9'},
+  '대학':  {icon:'🎓', color:'#8b5cf6'},
+  '어학':  {icon:'🌍', color:'#06b6d4'},
+  '코딩':  {icon:'💻', color:'#10b981'},
+  '독서':  {icon:'📗', color:'#059669'},
+  '예체능':{icon:'🎨', color:'#f43f5e'},
+  '자격증':{icon:'📋', color:'#f59e0b'},
+  '공무원':{icon:'🏛️', color:'#10b981'},
+  '건강':  {icon:'💪', color:'#ef4444'},
+  '습관':  {icon:'⏰', color:'#8b5cf6'},
+  '여행':  {icon:'🗺️', color:'#f97316'},
+};
+let recCurrentCat = '전체';
+
+// ── 카테고리별 달성률 계산 ──
+function getCatStats() {
+  const stats = {}; // { cat: { done, total } }
+  allCalEvents.filter(ev => ev.type === 'aip' && ev.cat).forEach(ev => {
+    if (!stats[ev.cat]) stats[ev.cat] = { done: 0, total: 0 };
+    stats[ev.cat].total++;
+    if (ev.status === 'done') stats[ev.cat].done++;
+  });
+  return stats;
+}
+
+// ── AI 패턴 분석 멘트 자동 생성 ──
+function buildAiPatternMsg() {
+  const counts  = getGoalCounts();
+  const stats   = getCatStats();
+  const total   = allCalEvents.filter(ev => ev.type === 'aip').length;
+  const done    = allCalEvents.filter(ev => ev.type === 'aip' && ev.status === 'done').length;
+  const rate    = total > 0 ? Math.round(done / total * 100) : 0;
+
+  // 가장 많이 선택된 카테고리
+  const catCounts = {};
+  GOAL_POOL.forEach(g => { catCounts[g.cat] = (catCounts[g.cat] || 0) + (counts[g.key] || 0); });
+  const topCat = Object.entries(catCounts).sort((a,b) => b[1]-a[1])[0];
+
+  // 달성률 높은 카테고리
+  const bestCat = Object.entries(stats)
+    .filter(([,v]) => v.total >= 3)
+    .map(([cat, v]) => ({ cat, rate: Math.round(v.done/v.total*100) }))
+    .sort((a,b) => b.rate - a.rate)[0];
+
+  if (total === 0) return '플랜을 생성하면 AI가 패턴을 분석해드려요 ✨';
+
+  let msg = '';
+  if (topCat && topCat[1] > 0) {
+    msg += `<span style="color:#c4b5fd;font-weight:700">${topCat[0]}</span> 플랜을 가장 많이 생성하고 있어요. `;
+  }
+  if (bestCat) {
+    msg += `<span style="color:#86efac;font-weight:700">${bestCat.cat}</span> 달성률이 ${bestCat.rate}%로 가장 높아요! 💪 `;
+  }
+  if (rate > 0) {
+    msg += `전체 미션 달성률 <span style="color:#fde68a;font-weight:700">${rate}%</span>예요.`;
+  }
+  return msg || '플랜을 더 생성하면 AI가 패턴을 분석해드려요 ✨';
+}
+
+// ── 생성 플랜 전체 보기 모달 ──
+function openMyPlansModal() {
+  const existing = document.getElementById('my-plans-modal');
+  if (existing) existing.remove();
+
+  const counts = getGoalCounts();
+  const catStats = getCatStats();
+
+  const plans = GOAL_POOL
+    .map(g => ({ ...g, count: counts[g.key] || 0 }))
+    .filter(g => g.count > 0)
+    .sort((a, b) => b.count - a.count);
+
+  if (plans.length === 0) {
+    alert('아직 생성된 플랜이 없어요!');
+    return;
+  }
+
+  // 카테고리별 그룹핑
+  const grouped = {};
+  plans.forEach(g => {
+    if (!grouped[g.cat]) grouped[g.cat] = [];
+    grouped[g.cat].push(g);
+  });
+
+  const modal = document.createElement('div');
+  modal.id = 'my-plans-modal';
+  modal.style.cssText = 'position:absolute;inset:0;background:rgba(0,0,0,0.5);z-index:200;display:flex;flex-direction:column;justify-content:flex-end';
+
+  const sheet = document.createElement('div');
+  sheet.style.cssText = 'background:white;border-radius:24px 24px 0 0;max-height:80%;overflow-y:auto;transform:translateY(100%);transition:transform 0.3s ease';
+
+  const totalCount = plans.reduce((a, g) => a + g.count, 0);
+
+  sheet.innerHTML = `
+    <div style="padding:16px 20px 0;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:white;border-bottom:1px solid var(--g100);padding-bottom:12px">
+      <div>
+        <div style="font-size:17px;font-weight:900;color:var(--g900)">내 생성 플랜</div>
+        <div style="font-size:11px;color:var(--g400);margin-top:2px">총 ${plans.length}종 · ${totalCount}회 생성</div>
+      </div>
+      <button onclick="document.getElementById('my-plans-modal').remove()" style="width:32px;height:32px;border-radius:50%;border:none;background:var(--g100);font-size:16px;cursor:pointer">✕</button>
+    </div>
+    <div style="padding:14px 20px 32px">
+      ${Object.entries(grouped).map(([cat, items]) => {
+        const meta = CAT_META[cat] || CAT_META['전체'];
+        const cs = catStats[cat];
+        const achRate = cs && cs.total > 0 ? Math.round(cs.done / cs.total * 100) : null;
+        return `
+          <div style="margin-bottom:20px">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
+              <div style="font-size:12px;font-weight:800;color:${meta.color}">${meta.icon} ${cat}</div>
+              ${achRate !== null ? `<span style="font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;background:${achRate>=70?'#dcfce7':'#fef3c7'};color:${achRate>=70?'#059669':'#d97706'}">달성률 ${achRate}%</span>` : ''}
+            </div>
+            ${items.map(g => `
+              <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 12px;background:var(--g50);border-radius:12px;margin-bottom:6px;border:1px solid var(--g100)" onclick="reuseGoal('${g.label.replace(/'/g,"\\'")}')">
+                <div style="flex:1">
+                  <div style="font-size:12.5px;font-weight:700;color:var(--g900)">${g.label}</div>
+                  <div style="font-size:10px;color:var(--g400);margin-top:2px">${g.count}회 생성</div>
+                </div>
+                <div style="font-size:11px;font-weight:700;color:var(--p);background:var(--p-l);padding:5px 10px;border-radius:10px;flex-shrink:0">다시 시작 →</div>
+              </div>`).join('')}
+          </div>`;
+      }).join('')}
+    </div>`;
+
+  modal.appendChild(sheet);
+  document.querySelector('.phone').appendChild(modal);
+  modal.onclick = e => { if (e.target === modal) modal.remove(); };
+  setTimeout(() => { sheet.style.transform = 'translateY(0)'; }, 10);
+}
+
+// 이전 플랜 재사용 — + 모달로 목표 자동 입력
+function reuseGoal(label) {
+  document.getElementById('my-plans-modal')?.remove();
+  // + 모달 열기
+  addInitialized = false;
+  addStep = 0;
+  addAnswers = [];
+  openAddModal();
+  // 목표 자동 선택
+  setTimeout(() => {
+    addAnswers.push(label);
+    addMsg(label, 'user');
+    addChips([]);
+    trackGoalClick(findGoalKey(label));
+    setTimeout(addNextQ, 500);
+  }, 700);
+}
+
+function recSetCat(cat) {
+  recCurrentCat = cat;
+  document.querySelectorAll('[id^="rct-"]').forEach(btn => {
+    const isOn = btn.id === 'rct-' + cat;
+    btn.style.background = isOn ? 'var(--p)' : 'white';
+    btn.style.color      = isOn ? 'white' : 'var(--g500)';
+    btn.style.border     = isOn ? 'none' : '1.5px solid var(--g200)';
+  });
+  renderRecPlans();
+}
+
+function renderRecPlans() {
+  const list = document.getElementById('rec-plan-list');
+  if (!list) return;
+  const counts  = getGoalCounts();
+  const catStats = getCatStats();
+
+  // AI 패턴 멘트 업데이트
+  const aiMsg = document.getElementById('rec-ai-msg');
+  if (aiMsg) aiMsg.innerHTML = buildAiPatternMsg();
+
+  // 총 생성 플랜 수 업데이트
+  const totalPlans = Object.values(counts).reduce((a,b) => a+b, 0);
+  const v4 = document.getElementById('rec-v4');
+  if (v4) v4.innerHTML = `${totalPlans}<span style="font-size:12px;color:var(--g400)">개</span>`;
+
+  // 전체 달성률 업데이트
+  const aipEvs = allCalEvents.filter(ev => ev.type === 'aip');
+  const doneEvs = aipEvs.filter(ev => ev.status === 'done');
+  const rate = aipEvs.length > 0 ? Math.round(doneEvs.length / aipEvs.length * 100) : 0;
+  const v1 = document.getElementById('rec-v1');
+  if (v1) v1.innerHTML = `${rate}<span style="font-size:12px;color:var(--g400)">%</span>`;
+
+  const LEARNING_CATS = ['중등','고등','영어','대학','어학','코딩','독서','예체능'];
+
+  const filtered = GOAL_POOL
+    .filter(g => {
+      if (recCurrentCat === '전체') return true;
+      if (recCurrentCat === '학습') return LEARNING_CATS.includes(g.cat);
+      return g.cat === recCurrentCat;
+    })
+    .map(g => ({ ...g, count: counts[g.key] || 0 }))
+    .filter(g => g.count > 0)
+    .sort((a, b) => b.count - a.count)
+    .slice(0, 5);
+
+  if (filtered.length === 0) {
+    list.innerHTML = `
+      <div style="text-align:center;padding:28px 20px;color:var(--g400)">
+        <div style="font-size:28px;margin-bottom:8px">📭</div>
+        <div style="font-size:13px;font-weight:700;color:var(--g500)">아직 생성된 플랜이 없어요</div>
+        <div style="font-size:11px;margin-top:4px">목표를 설정하면 여기에 기록돼요!</div>
+      </div>`;
+    return;
+  }
+
+  const maxCount = filtered[0].count || 1;
+  const ranks = ['🥇','🥈','🥉','4️⃣','5️⃣'];
+
+  list.innerHTML = filtered.map((g, i) => {
+    const barW     = Math.round((g.count / maxCount) * 100);
+    const catMeta  = CAT_META[g.cat] || CAT_META['전체'];
+    const cs       = catStats[g.cat];
+    const achRate  = cs && cs.total > 0 ? Math.round(cs.done / cs.total * 100) : null;
+    const achBadge = achRate !== null
+      ? `<span style="font-size:9px;font-weight:700;padding:2px 7px;border-radius:10px;background:${achRate>=70?'#dcfce7':'#fef3c7'};color:${achRate>=70?'#059669':'#d97706'}">달성률 ${achRate}%</span>`
+      : '';
+    return `
+    <div onclick="openPlanDetail('${g.label.replace(/'/g,"\\'")}')" style="background:white;border-radius:14px;padding:12px 14px;margin-bottom:8px;border:1px solid var(--g100);display:flex;align-items:center;gap:12px;box-shadow:0 1px 6px rgba(0,0,0,0.04);cursor:pointer;active:opacity(0.8)">
+      <div style="font-size:20px;width:28px;text-align:center;flex-shrink:0">${ranks[i]}</div>
+      <div style="flex:1;min-width:0">
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:3px">
+          <div style="font-size:12.5px;font-weight:800;color:var(--g900);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1">${g.label}</div>
+          ${achBadge}
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;margin-top:4px">
+          <div style="flex:1;height:4px;background:var(--g100);border-radius:2px;overflow:hidden">
+            <div style="width:${barW}%;height:100%;background:${catMeta.color};border-radius:2px"></div>
+          </div>
+          <span style="font-size:10px;font-weight:700;color:${catMeta.color};flex-shrink:0">${g.count}회</span>
+        </div>
+        <div style="font-size:9.5px;color:var(--g400);margin-top:2px">${catMeta.icon} ${g.cat}</div>
+      </div>
+    </div>`;
+  }).join('');
+}
 
 function recSetTab(tab){
   // 탭 버튼 스타일
