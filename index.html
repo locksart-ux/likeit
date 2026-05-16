@@ -772,8 +772,12 @@ html,body { width:100%; height:100%; background:#dde0f0; display:flex; align-ite
   </div>
 
   <!-- 주간 날짜 스트립 (좌우 스크롤) -->
-  <div class="cal-wkstrip-scroll" id="cal-wkstrip-scroll">
-    <div class="cal-wkstrip" id="cal-wkstrip"></div>
+  <div style="display:flex;align-items:center;gap:4px;padding:0 8px">
+    <button onclick="calShiftMonth(-1)" style="width:28px;height:28px;border-radius:50%;border:none;background:var(--g100);font-size:16px;cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:var(--g600)">‹</button>
+    <div class="cal-wkstrip-scroll" id="cal-wkstrip-scroll" style="flex:1">
+      <div class="cal-wkstrip" id="cal-wkstrip"></div>
+    </div>
+    <button onclick="calShiftMonth(1)" style="width:28px;height:28px;border-radius:50%;border:none;background:var(--g100);font-size:16px;cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:var(--g600)">›</button>
   </div>
 
   <!-- 범례 + 구글 캘린더 연동 표시 -->
@@ -2725,6 +2729,36 @@ function buildCalendar() {
   calBuilt = true;
   buildCalWeekStrip(new Date());
   buildCalDayView();
+
+  // ── 마우스 휠로 날짜 이동 ──
+  const calScreen = document.getElementById('s040');
+  if (calScreen && !calScreen.dataset.wheelInit) {
+    calScreen.dataset.wheelInit = '1';
+    let wheelTimer = null;
+    calScreen.addEventListener('wheel', e => {
+      e.preventDefault();
+      clearTimeout(wheelTimer);
+      wheelTimer = setTimeout(() => {
+        if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+          calShiftMonth(e.deltaX > 0 ? 1 : -1);
+        } else {
+          calShiftMonth(e.deltaY > 0 ? 1 : -1);
+        }
+      }, 50);
+    }, { passive: false });
+
+    // ── 마우스 드래그로 날짜 이동 ──
+    let dragX = 0, dragging = false;
+    calScreen.addEventListener('mousedown', e => { dragX = e.clientX; dragging = true; });
+    calScreen.addEventListener('mousemove', e => { if (!dragging) return; });
+    calScreen.addEventListener('mouseup', e => {
+      if (!dragging) return;
+      dragging = false;
+      const dx = e.clientX - dragX;
+      if (Math.abs(dx) > 60) calShiftMonth(dx < 0 ? 1 : -1);
+    });
+    calScreen.addEventListener('mouseleave', () => { dragging = false; });
+  }
 }
 
 function buildCalWeekStrip(refDate) {
