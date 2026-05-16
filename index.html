@@ -1554,13 +1554,14 @@ async function obSend() {
     await obD(300); obShowTyping();
 
     // 진짜 Claude AI 플랜 생성
-    const sysPrompt = `당신은 LIKEIT 앱의 AI 멘토입니다. 사용자 목표에 맞는 단계별 플랜을 만들어주세요.
-반드시 아래 JSON 형식으로만 응답하세요. JSON 외 다른 텍스트 없이:
-{"comment":"격려 한마디(20자이내)","weeks":[{"period":"1주","task":"구체적할일","time":"1시간/일"},{"period":"2-4주","task":"구체적할일","time":"1.5시간/일"},{"period":"목표기간","task":"마무리전략","time":"2시간/일"}]}`;
+    const sysPrompt = `You are LIKEIT app's AI mentor. Respond ONLY with valid JSON, no other text, no markdown, no explanation.
+Required format exactly:
+{"comment":"한줄격려(20자이내)","weeks":[{"period":"1주차","task":"목표에맞는구체적할일","time":"1시간/일"},{"period":"2-3주차","task":"목표에맞는구체적할일","time":"1.5시간/일"},{"period":"${obDeadline}","task":"마무리전략","time":"2시간/일"}]}
+The task content must be specific to the user's goal: ${obGoal}`;
 
     const aiReply = await callClaude([
-      {role:'user', content:`이름:${obName} 목표:${obGoal} 기간:${obDeadline} - 맞춤 플랜을 JSON으로 만들어주세요.`}
-    ], sysPrompt, 400);
+      {role:'user', content:`목표:${obGoal} 기간:${obDeadline} 이름:${obName} - JSON만 출력하세요.`}
+    ], sysPrompt, 500);
 
     obRemoveTyping();
 
@@ -1572,10 +1573,17 @@ async function obSend() {
     let comment = '충분히 달성 가능해요!';
     if (aiReply) {
       try {
-        const parsed = JSON.parse(aiReply.replace(/```json|```/g,'').trim());
-        if (parsed.weeks) weeks = parsed.weeks;
+        // JSON 추출 시도 (여러 방식)
+        let jsonStr = aiReply.replace(/```json|```/g,'').trim();
+        // { } 사이 내용만 추출
+        const match = jsonStr.match(/\{[\s\S]*\}/);
+        if (match) jsonStr = match[0];
+        const parsed = JSON.parse(jsonStr);
+        if (parsed.weeks && parsed.weeks.length > 0) weeks = parsed.weeks;
         if (parsed.comment) comment = parsed.comment;
-      } catch(e) {}
+      } catch(e) {
+        console.log('JSON 파싱 실패, 기본값 사용:', e);
+      }
     }
 
     await obAddBubble(comment, 'ai');
